@@ -1,7 +1,7 @@
 ---
 title: General Chemistry
 code: CHE 0531 1101G
-description: Past questions – Final 2025 and Midterm 2016 (IPE, SUST).
+description: This subject is relatively new in IPE.
 icon: ࿌
 color: #3b5bdb
 ---

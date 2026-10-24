@@ -1,7 +1,7 @@
 ---
 title: Effective Communication in English
 code: ENG 0231 1101G
-description: Past questions – Finals 2016, 2018, 2019, 2023, 2024, 2025 and a term test (IPE, SUST).
+description: Most of the past questions were retrieved.
 icon: ℈
 color: #d9480f
 ---

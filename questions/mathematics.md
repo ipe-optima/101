@@ -1,7 +1,7 @@
 ---
 title: Mathematics
 code: MAT 0541 1103G
-description: Past questions with corrected statements and worked answers.
+description: Some questions I could not retrieve. Especially those before '19. Super blur.
 icon: ࿕
 color: #3b5bdb
 ---
