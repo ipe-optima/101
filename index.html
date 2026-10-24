@@ -1,0 +1,1246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>101 Non Major Subs Questionnaire</title>
+  <meta name="description" content="Practice past exam questions by subject and topic, with answers, explanations and progress tracking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --card-2: #f9fafc;
+      --text: #1c2230;
+      --muted: #5b6579;
+      --line: #e1e5ee;
+      --line-strong: #cbd2df;
+      --accent: #3b5bdb;
+      --good: #1f9d55;
+      --good-soft: #e3f6ea;
+      --warn: #d9822b;
+      --warn-soft: #fdf0e1;
+      --ans: #f4f7fd;
+      --code: #eef1f7;
+      --ai: #7c5cff;
+      --ai-soft: rgba(124, 92, 255, .09);
+      --ai-ink: #5b3fd6;
+      --shadow: 0 1px 2px rgba(16, 24, 40, .05), 0 6px 18px rgba(16, 24, 40, .05);
+      --shadow-lg: 0 12px 32px rgba(16, 24, 40, .12);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0d12;
+        --card: #14171f;
+        --card-2: #1a1e28;
+        --text: #f1f3f8;
+        --muted: #a9b1c2;
+        --line: #232836;
+        --line-strong: #353c4d;
+        --accent: #8fa6ff;
+        --good: #5ad19a;
+        --good-soft: rgba(90, 209, 154, .12);
+        --warn: #f5b46b;
+        --warn-soft: rgba(245, 180, 107, .12);
+        --ans: #0f1218;
+        --code: #1e2330;
+        --ai: #a78bfa;
+        --ai-soft: rgba(167, 139, 250, .12);
+        --ai-ink: #cdbfff;
+        --shadow: inset 0 1px 0 rgba(255, 255, 255, .03), 0 8px 24px rgba(0, 0, 0, .35);
+        --shadow-lg: 0 16px 40px rgba(0, 0, 0, .55);
+      }
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(1100px 520px at 50% -260px, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%),
+        var(--bg);
+      background-attachment: fixed;
+      color: var(--text);
+      font: 16px/1.65 "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased
+    }
+
+    ::selection {
+      background: color-mix(in srgb, var(--accent) 35%, transparent)
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 16px 60px
+    }
+
+    /* --ink = accent colour that is always readable as text on the current theme */
+    :root,
+    .scope {
+      --ink: var(--accent);
+      --accent-soft: color-mix(in srgb, var(--accent) 12%, var(--card))
+    }
+
+    @media (prefers-color-scheme: dark) {
+
+      :root,
+      .scope {
+        --ink: color-mix(in oklab, var(--accent) 55%, #fff);
+        --accent-soft: color-mix(in srgb, var(--accent) 20%, var(--card))
+      }
+    }
+
+    header {
+      padding: 28px 0 12px
+    }
+
+    h1 {
+      margin: 0 0 4px;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -.02em
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: .95rem
+    }
+
+    .stats {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 16px 0 8px;
+      align-items: center
+    }
+
+    .pill {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--muted)
+    }
+
+    .bar {
+      flex: 1 1 160px;
+      height: 6px;
+      background: var(--line);
+      border-radius: 99px;
+      overflow: hidden;
+      min-width: 120px
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, color-mix(in srgb, var(--good) 70%, var(--ink)), var(--good));
+      border-radius: inherit;
+      width: 0;
+      transition: width .4s ease
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .88rem;
+      transition: color .15s
+    }
+
+    .back:hover {
+      color: var(--ink)
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 14px;
+      margin-top: 20px
+    }
+
+    .subject {
+      display: block;
+      position: relative;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 7%, var(--card)), var(--card) 60%);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease
+    }
+
+    .subject::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--ink))
+    }
+
+    .subject:hover {
+      transform: translateY(-3px);
+      border-color: color-mix(in srgb, var(--ink) 35%, var(--line));
+      box-shadow: var(--shadow-lg)
+    }
+
+    .subject .ico {
+      font-size: 1.8rem
+    }
+
+    .subject h3 {
+      margin: 6px 0 2px;
+      font-size: 1.1rem
+    }
+
+    .subject .code {
+      color: var(--muted);
+      font-size: .82rem
+    }
+
+    .subject p {
+      color: var(--muted);
+      font-size: .88rem;
+      margin: 8px 0
+    }
+
+    .subject .bar {
+      margin: 10px 0 4px;
+      flex: none;
+      width: 100%
+    }
+
+    .subject .mini {
+      font-size: .8rem;
+      color: var(--muted)
+    }
+
+    .notice {
+      background: var(--warn-soft);
+      border: 1px solid var(--warn);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 16px 0;
+      font-size: .9rem
+    }
+
+    .notice code {
+      background: var(--code);
+      padding: 1px 6px;
+      border-radius: 4px
+    }
+
+    .notice input {
+      margin-top: 8px
+    }
+
+    .topics {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      padding: 10px 0;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      border-bottom: 1px solid var(--line);
+      scrollbar-width: thin
+    }
+
+    .chip {
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--muted);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font: inherit;
+      font-size: .86rem;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color .15s, border-color .15s, background .15s
+    }
+
+    .chip:hover {
+      color: var(--text);
+      border-color: var(--line-strong)
+    }
+
+    .chip.on {
+      background: var(--accent-soft);
+      color: var(--ink);
+      border-color: color-mix(in srgb, var(--ink) 45%, transparent)
+    }
+
+    .chip small {
+      opacity: .7;
+      margin-left: 5px;
+      font-variant-numeric: tabular-nums
+    }
+
+    .tools {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 14px 0
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--text);
+      padding: 7px 14px;
+      border-radius: 9px;
+      font: inherit;
+      font-size: .86rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background .15s, border-color .15s, color .15s, filter .15s, box-shadow .15s
+    }
+
+    .btn:hover {
+      background: var(--card-2);
+      border-color: var(--line-strong)
+    }
+
+    .btn:focus-visible,
+    .chip:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 2px
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 30%, transparent)
+    }
+
+    .btn.primary:hover {
+      filter: brightness(1.12)
+    }
+
+    .btn.good.on {
+      background: var(--good-soft);
+      border-color: var(--good);
+      color: var(--good)
+    }
+
+    .btn.warn.on {
+      background: var(--warn-soft);
+      border-color: var(--warn);
+      color: var(--warn)
+    }
+
+    .btn.link {
+      background: none;
+      border: none;
+      color: var(--muted);
+      text-decoration: underline;
+      padding: 4px 0
+    }
+
+    .topic-title {
+      margin: 30px 0 4px;
+      font-size: 1.2rem;
+      font-weight: 650;
+      letter-spacing: -.01em
+    }
+
+    .topic-desc {
+      color: var(--muted);
+      font-size: .9rem;
+      margin: 0 0 14px
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin: 0 0 14px;
+      box-shadow: var(--shadow);
+      transition: border-color .2s
+    }
+
+    .card:hover {
+      border-color: var(--line-strong)
+    }
+
+    .card.done {
+      box-shadow: inset 3px 0 0 var(--good), var(--shadow)
+    }
+
+    .card.review {
+      box-shadow: inset 3px 0 0 var(--warn), var(--shadow)
+    }
+
+    .meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 10px
+    }
+
+    .qid {
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: .01em
+    }
+
+    .tag {
+      font-size: .72rem;
+      font-weight: 500;
+      background: var(--accent-soft);
+      color: var(--ink);
+      padding: 2px 9px;
+      border-radius: 99px
+    }
+
+    .tag.or {
+      background: var(--warn-soft);
+      color: var(--warn)
+    }
+
+    .q {
+      margin: 0 0 12px
+    }
+
+    .q p,
+    .answer p {
+      margin: 6px 0
+    }
+
+    .q ul,
+    .q ol {
+      margin: 6px 0 0
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .answer {
+      display: none;
+      margin-top: 16px;
+      background: var(--ans);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 18px
+    }
+
+    .answer.open {
+      display: block;
+      animation: reveal .22s ease
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(-4px)
+      }
+    }
+
+    .answer h4 {
+      margin: 14px 0 4px;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink)
+    }
+
+    .answer>h4:first-child {
+      margin-top: 0
+    }
+
+    .answer ul,
+    .answer ol {
+      margin: 4px 0;
+      padding-left: 22px
+    }
+
+    .final {
+      background: var(--good-soft);
+      border-left: 3px solid var(--good);
+      padding: 6px 12px;
+      border-radius: 6px;
+      margin: 8px 0;
+      font-weight: 600
+    }
+
+    .eq {
+      background: var(--code);
+      padding: 6px 12px;
+      border-radius: 6px;
+      margin: 6px 0;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: .92rem;
+      overflow-x: auto
+    }
+
+    code {
+      background: var(--code);
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-size: .9em
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: .9rem
+    }
+
+    td,
+    th {
+      border: 1px solid var(--line);
+      padding: 5px 10px;
+      text-align: left;
+      vertical-align: top
+    }
+
+    th {
+      background: var(--code)
+    }
+
+    svg {
+      max-width: 100%;
+      height: auto
+    }
+
+    svg text {
+      fill: var(--text);
+      font-family: system-ui, sans-serif
+    }
+
+    .flagrow {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line)
+    }
+
+    .btn.flag {
+      font-size: .8rem;
+      color: var(--muted);
+      border-color: transparent;
+      background: none
+    }
+
+    .btn.flag:hover {
+      color: var(--warn);
+      background: var(--warn-soft);
+      border-color: transparent
+    }
+
+    dialog {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--card);
+      color: var(--text);
+      padding: 22px;
+      width: min(480px, 92vw);
+      box-shadow: var(--shadow-lg)
+    }
+
+    dialog::backdrop {
+      background: rgba(0, 0, 0, .55);
+      -webkit-backdrop-filter: blur(3px);
+      backdrop-filter: blur(3px)
+    }
+
+    dialog h3 {
+      margin: 0 0 4px;
+      font-size: 1.1rem
+    }
+
+    dialog .ref {
+      color: var(--muted);
+      font-size: .85rem;
+      margin-bottom: 10px
+    }
+
+    dialog textarea {
+      width: 100%;
+      min-height: 110px;
+      resize: vertical;
+      font: inherit;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--text)
+    }
+
+    dialog .row {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+      margin-top: 12px;
+      align-items: center
+    }
+
+    dialog .msg {
+      margin-right: auto;
+      font-size: .85rem
+    }
+
+    dialog .msg.err {
+      color: var(--warn)
+    }
+
+    dialog .msg.ok {
+      color: var(--good)
+    }
+
+    .empty {
+      color: var(--muted);
+      text-align: center;
+      padding: 30px
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: .82rem;
+      margin-top: 30px;
+      text-align: center
+    }
+    /* ---------- Ask AI (split button) ---------- */
+    .ask {
+      position: relative;
+      display: inline-flex;
+      border-radius: 9px;
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--ai) 38%, transparent);
+      background: var(--ai-soft);
+      transition: box-shadow .2s, background .2s
+    }
+
+    .ask:hover,
+    .ask.open {
+      background: color-mix(in srgb, var(--ai) 18%, transparent);
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--ai) 60%, transparent), 0 6px 20px color-mix(in srgb, var(--ai) 22%, transparent)
+    }
+
+    .ask .btn {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--ai-ink);
+      background: none;
+      border: 0
+    }
+
+    .ask .askgo {
+      padding-right: 12px;
+      border-radius: 9px 0 0 9px
+    }
+
+    .ask .askpick {
+      padding: 7px 9px;
+      border-radius: 0 9px 9px 0;
+      border-left: 1px solid color-mix(in srgb, var(--ai) 30%, transparent)
+    }
+
+    .ask .btn:hover {
+      background: color-mix(in srgb, var(--ai) 12%, transparent)
+    }
+
+    .askmenu {
+      display: none;
+      position: absolute;
+      right: 0;
+      bottom: 100%;
+      margin-bottom: 6px;
+      z-index: 10;
+      background: var(--card-2);
+      border: 1px solid var(--line-strong);
+      border-radius: 10px;
+      min-width: 160px;
+      padding: 4px;
+      box-shadow: var(--shadow-lg)
+    }
+
+    .ask.open .askmenu {
+      display: block;
+      animation: reveal .15s ease
+    }
+
+    .askmenu button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 8px 12px;
+      border: 0;
+      border-radius: 7px;
+      background: none;
+      color: var(--text);
+      font: inherit;
+      font-size: .86rem;
+      cursor: pointer
+    }
+
+    .askmenu button:hover {
+      background: var(--ai-soft);
+      color: var(--ai-ink)
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      background: var(--card-2);
+      color: var(--text);
+      border: 1px solid var(--line-strong);
+      box-shadow: var(--shadow-lg);
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: .86rem;
+      z-index: 50;
+      max-width: 90vw;
+      animation: toast-in .2s ease
+    }
+
+    @keyframes toast-in {
+      from {
+        opacity: 0;
+        transform: translate(-50%, 6px)
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div id="app">
+      <div class="empty">Loading…</div>
+    </div>
+    <dialog id="flagDlg">
+      <h3>⚑ Report a problem</h3>
+      <div class="ref" id="flagRef"></div>
+      <textarea id="flagText" maxlength="1500"
+        placeholder="What is wrong? (wrong answer, typo, unclear explanation…)"></textarea>
+      <div class="row">
+        <span class="msg" id="flagMsg"></span>
+        <button class="btn" data-a="flagcancel">Cancel</button>
+        <button class="btn primary" data-a="flagsend" id="flagSendBtn">Send</button>
+      </div>
+    </dialog>
+    <footer>Progress is saved in this browser.
+    </footer>
+  </div>
+
+  <script>
+
+    const HUB_TITLE = "101 Questionnaire Practice : Optima";
+    const HUB_SUBTITLE = "";
+
+    const SUBJECTS = [
+      { id: "chemistry", file: "questions/chemistry.md" },
+      { id: "english",   file: "questions/english.md" },
+      { id: "math",      file: "questions/mathematics.md" },
+      { id: "physics",      file: "questions/physics.md" },
+    ];
+
+    const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1563438571963023363/qx2kxzt9H1CQpXfaPWQKEKQxUtTKmIux3Ll1i-JKGVyafwWCGGEIn5GBmiBtMp9Nkks_";
+
+    /* optional per-subject overrides: { id, file, title:"…", icon:"📘", color:"#e8590c" } */
+
+    /* ===== PARSER START ===== */
+    function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+
+    function inline(s) {
+      return s
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
+        .replace(/(^|[^*\w])\*([^*\n]+)\*(?!\*)/g, '$1<i>$2</i>');
+    }
+
+    const LIST_RE = /^(\s*)([-*]|\d+\.|\(?(?:iv|v|i{1,3})\))\s+(.*)$/;
+    const RAW_RE = /^<(svg|table|div|p|ul|ol|h[1-6]|figure|details)\b/i;
+
+    function renderList(items) {
+      let p = 0;
+      function build(indent) {
+        const first = items[p];
+        const ordered = !/^[-*]$/.test(first.marker);
+        const roman = /^\(?(iv|v|i{1,3})\)$/.test(first.marker);
+        const tag = ordered ? "ol" : "ul";
+        let html = "";
+        while (p < items.length && items[p].indent >= indent) {
+          const it = items[p++];
+          html += "<li>" + inline(it.text);
+          if (p < items.length && items[p].indent > it.indent) html += build(items[p].indent);
+          html += "</li>";
+        }
+        return "<" + tag + (roman ? ' type="i"' : '') + ">" + html + "</" + tag + ">";
+      }
+      return build(items[0].indent);
+    }
+
+    function md(src) {
+      const L = src.replace(/\r/g, "").split("\n");
+      const out = [];
+      let i = 0;
+      const blank = l => !l.trim();
+      const blockStart = l => l.startsWith(":::") || RAW_RE.test(l) || l.startsWith("|") || LIST_RE.test(l) || /^##### /.test(l);
+      while (i < L.length) {
+        const l = L[i];
+        if (blank(l)) { i++; continue; }
+
+        if (l.startsWith(":::")) {                       // custom blocks
+          const name = l.slice(3).trim(); const buf = []; i++;
+          while (i < L.length && L[i].trim() !== ":::") buf.push(L[i++]);
+          i++;
+          if (name === "eq") out.push('<div class="eq">' + buf.map(inline).join("<br>") + '</div>');
+          else if (name === "final") out.push('<div class="final">' + buf.map(inline).join("<br>") + '</div>');
+          else out.push('<div class="' + esc(name) + '">' + md(buf.join("\n")) + '</div>');
+          continue;
+        }
+        if (RAW_RE.test(l)) {                            // raw HTML (svg, tables…)
+          const buf = [];
+          if (/^<svg/i.test(l)) {
+            while (i < L.length) { buf.push(L[i]); if (/<\/svg>/i.test(L[i++])) break; }
+          } else {
+            while (i < L.length && !blank(L[i])) buf.push(L[i++]);
+          }
+          out.push(buf.join("\n")); continue;
+        }
+        if (l.startsWith("|")) {                         // markdown table
+          const rows = [];
+          while (i < L.length && L[i].trim().startsWith("|")) rows.push(L[i++].trim());
+          const cells = r => r.replace(/^\||\|$/g, "").split("|").map(c => c.trim());
+          const hasSep = rows[1] && /^\|?[\s:|-]+\|?$/.test(rows[1]);
+          let h = "<table>";
+          h += "<tr>" + cells(rows[0]).map(c => "<th>" + inline(c) + "</th>").join("") + "</tr>";
+          rows.slice(hasSep ? 2 : 1).forEach(r => { h += "<tr>" + cells(r).map(c => "<td>" + inline(c) + "</td>").join("") + "</tr>"; });
+          out.push(h + "</table>"); continue;
+        }
+        if (/^##### /.test(l)) { out.push("<h4>" + inline(l.slice(6)) + "</h4>"); i++; continue; }
+
+        if (LIST_RE.test(l)) {                           // lists (nested by indent)
+          const items = [];
+          while (i < L.length && !blank(L[i])) {
+            const m = L[i].match(LIST_RE);
+            if (m && !RAW_RE.test(L[i])) items.push({ indent: m[1].replace(/\t/g, "  ").length, marker: m[2], text: m[3] });
+            else if (/^\s+\S/.test(L[i]) && items.length) items[items.length - 1].text += " " + L[i].trim();
+            else break;
+            i++;
+          }
+          out.push(renderList(items)); continue;
+        }
+        const buf = [];                                // paragraph
+        while (i < L.length && !blank(L[i]) && (buf.length === 0 || !blockStart(L[i]))) buf.push(L[i++]);
+        out.push("<p>" + inline(buf.join(" ")) + "</p>");
+      }
+      return out.join("\n");
+    }
+
+    /* Subject file format:
+       ---front matter (title, code, description, icon, color)---
+       ## Topic name
+       desc: one-line description
+       ### ID | Source | Marks | or        <- "or" flag optional
+       question…
+       #### Answer
+       …
+       #### Explanation
+       …
+    */
+    function parseSubject(text) {
+      const lines = text.replace(/\r/g, "").split("\n");
+      let i = 0; const meta = {};
+      if (lines[0] && lines[0].trim() === "---") {
+        i = 1;
+        while (i < lines.length && lines[i].trim() !== "---") {
+          const m = lines[i].match(/^(\w+)\s*:\s*(.*)$/); if (m) meta[m[1]] = m[2].trim();
+          i++;
+        }
+        i++;
+      }
+      const topics = []; let topic = null, q = null, sect = "q";
+      for (; i < lines.length; i++) {
+        const l = lines[i];
+        if (/^## /.test(l)) { topic = { name: l.slice(3).trim(), desc: "", qs: [] }; topics.push(topic); q = null; continue; }
+        if (/^### /.test(l)) {
+          if (!topic) { topic = { name: "General", desc: "", qs: [] }; topics.push(topic); }
+          const p = l.slice(4).split("|").map(s => s.trim());
+          q = { id: p[0], src: p[1] || "", marks: p[2] || "", or: /\bor\b/i.test(p[3] || ""), q: [], ans: [], exp: [] };
+          topic.qs.push(q); sect = "q"; continue;
+        }
+        if (q && /^#### Answer\s*$/i.test(l)) { sect = "ans"; continue; }
+        if (q && /^#### Explanation\s*$/i.test(l)) { sect = "exp"; continue; }
+        if (q) q[sect].push(l);
+        else if (topic && /^desc\s*:/i.test(l)) topic.desc = l.replace(/^desc\s*:\s*/i, "");
+      }
+      topics.forEach(t => t.qs.forEach(q => { q.q = md(q.q.join("\n")); q.ans = md(q.ans.join("\n")); q.exp = md(q.exp.join("\n")); }));
+      return { meta, topics };
+    }
+    /* ===== PARSER END ===== */
+
+    /* ================= STATE / STORAGE ================= */
+    const $ = s => document.querySelector(s);
+    const STORE = "practice_hub_v1";
+    let state = { status: {} };
+    try { const raw = localStorage.getItem(STORE); if (raw) state = JSON.parse(raw) || state; } catch (e) { }
+    if (!state.status) state.status = {};
+    function save() { try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) { } }
+    const key = (sid, qid) => sid + "::" + qid;
+    const getSt = (sid, qid) => state.status[key(sid, qid)];
+
+    const DATA = {};       // subject id -> {cfg, title, code, desc, icon, color, topics, qs}
+    let failed = [];       // subjects whose file could not be loaded
+    let view = { topic: "all", onlyOpen: false };
+
+    function ingest(cfg, text) {
+      const d = parseSubject(text);
+      const m = d.meta;
+      const qs = d.topics.flatMap(t => t.qs);
+      DATA[cfg.id] = {
+        cfg, topics: d.topics, qs,
+        title: cfg.title || m.title || cfg.id,
+        code: m.code || "", desc: m.description || "",
+        icon: cfg.icon || m.icon || "📘",
+        color: cfg.color || m.color || "#3b5bdb"
+      };
+    }
+
+    async function loadAll() {
+      failed = [];
+      await Promise.all(SUBJECTS.map(async cfg => {
+        try {
+          const r = await fetch(cfg.file, { cache: "no-cache" });
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          ingest(cfg, await r.text());
+        } catch (e) { failed.push(cfg); }
+      }));
+    }
+
+    function stats(qs, sid) {
+      let done = 0, rev = 0;
+      qs.forEach(q => { const s = getSt(sid, q.id); if (s === "done") done++; else if (s === "review") rev++; });
+      return { total: qs.length, done, rev };
+    }
+
+    /* ================= HOME ================= */
+    function renderHome() {
+      const loadedIds = SUBJECTS.filter(s => DATA[s.id]).map(s => s.id);
+      let total = 0, done = 0, rev = 0;
+      loadedIds.forEach(id => { const s = stats(DATA[id].qs, id); total += s.total; done += s.done; rev += s.rev; });
+
+      let h = `<header><h1>🎓 ${esc(HUB_TITLE)}</h1><div class="sub">${esc(HUB_SUBTITLE)}</div>
+    <div class="stats">
+      <span class="pill">${loadedIds.length} subject${loadedIds.length === 1 ? "" : "s"}</span>
+      <span class="pill">${total} questions</span>
+      <span class="pill">✓ ${done} mastered</span>
+      <span class="pill">↻ ${rev} to review</span>
+      <div class="bar" title="Overall progress"><i style="width:${total ? done / total * 100 : 0}%"></i></div>
+    </div></header>`;
+
+      if (failed.length) {
+        h += `<div class="notice"><b>Couldn't load: ${failed.map(f => esc(f.file)).join(", ")}</b><br>
+      Browsers block loading files when this page is opened by double-click. Either run <code>python3 -m http.server</code> in this folder and open <code>http://localhost:8000</code>, or select the .md file(s) manually:<br>
+      <input type="file" id="filePick" accept=".md,.markdown,.txt" multiple></div>`;
+      }
+
+      h += `<div class="grid">` + loadedIds.map(id => {
+        const d = DATA[id], s = stats(d.qs, id);
+        return `<a class="subject scope" href="#/${encodeURIComponent(id)}" style="--accent:${esc(d.color)}">
+      <div class="ico">${esc(d.icon)}</div>
+      <h3>${esc(d.title)}</h3>
+      <div class="code">${esc(d.code)}</div>
+      ${d.desc ? `<p>${esc(d.desc)}</p>` : ""}
+      <div class="bar"><i style="width:${s.total ? s.done / s.total * 100 : 0}%"></i></div>
+      <div class="mini">${s.done}/${s.total} mastered · ${d.topics.length} topics${s.rev ? ` · ↻ ${s.rev}` : ""}</div>
+    </a>`;
+      }).join("") + `</div>`;
+
+      if (!loadedIds.length && !failed.length) h += `<div class="empty">No subjects declared yet. Add one to <code>SUBJECTS</code> in index.html.</div>`;
+      if (total) h += `<p style="margin-top:20px"><button class="btn link" data-a="resetall">Reset all progress</button></p>`;
+      $("#app").innerHTML = h;
+      document.title = HUB_TITLE;
+
+      const fp = $("#filePick");
+      if (fp) fp.onchange = async () => {
+        for (const f of fp.files) {
+          const cfg = SUBJECTS.find(s => s.file.split("/").pop() === f.name);
+          if (cfg) { ingest(cfg, await f.text()); failed = failed.filter(x => x.id !== cfg.id); }
+        }
+        renderHome();
+      };
+      renderMath();
+    }
+
+    /* ================= SUBJECT ================= */
+    function cardHTML(sid, q) {
+      const st = getSt(sid, q.id);
+      return `<article class="card ${st || ""}" data-id="${esc(q.id)}">
+    <div class="meta"><span class="qid">Q ${esc(q.id)}</span>${q.src ? `<span class="tag">${esc(q.src)}</span>` : ""}${q.or ? '<span class="tag or">OR option</span>' : ""}${q.marks ? `<span class="tag">${esc(q.marks)} marks</span>` : ""}</div>
+    <div class="q">${q.q}</div>
+    <div class="actions">
+      <button class="btn primary" data-a="toggle" aria-expanded="false">Show answer</button>
+      <button class="btn good ${st === "done" ? "on" : ""}" data-a="done">✓ Got it</button>
+      <button class="btn warn ${st === "review" ? "on" : ""}" data-a="review">↻ Review later</button>
+    </div>
+    <div class="answer"><h4>Answer</h4>${q.ans}<h4>Explanation</h4>${q.exp}<div class="flagrow">${askHTML()}<button class="btn flag" data-a="flag">⚑ Flag wrong</button></div></div>
+  </article>`;
+    }
+
+    function statPills(sid) {
+      const s = stats(DATA[sid].qs, sid);
+      return `<span class="pill">${s.total} questions</span>
+    <span class="pill">✓ ${s.done} mastered</span>
+    <span class="pill">↻ ${s.rev} to review</span>
+    <div class="bar" title="Progress"><i style="width:${s.total ? s.done / s.total * 100 : 0}%"></i></div>`;
+    }
+
+    function renderSubject(sid) {
+      const d = DATA[sid];
+      if (!d) { location.hash = "#/"; return; }
+      let h = `<div class="scope" style="--accent:${esc(d.color)}">
+    <a class="back" href="#/">← All subjects</a>
+    <header><h1>${esc(d.icon)} ${esc(d.title)}</h1>
+      <div class="sub">${[d.code, d.desc].filter(Boolean).map(esc).join(" · ")}</div>
+      <div class="stats" id="subStats">${statPills(sid)}</div></header>
+    <nav class="topics">
+      <button class="chip ${view.topic === "all" ? "on" : ""}" data-a="topic" data-t="all">All<small>${d.qs.length}</small></button>
+      ${d.topics.map((t, i) => `<button class="chip ${view.topic === String(i) ? "on" : ""}" data-a="topic" data-t="${i}">${esc(t.name)}<small>${t.qs.length}</small></button>`).join("")}
+    </nav>
+    <div class="tools">
+      <button class="btn" data-a="showall">Show all answers</button>
+      <button class="btn" data-a="hideall">Hide all answers</button>
+      <button class="btn" data-a="filter">${view.onlyOpen ? "Showing: Not mastered (click for all)" : "Only show: Not mastered"}</button>
+      <button class="btn" data-a="reset">Reset this subject</button>
+    </div><main>`;
+      let any = false;
+      d.topics.forEach((t, i) => {
+        if (view.topic !== "all" && view.topic !== String(i)) return;
+        const qs = t.qs.filter(q => !view.onlyOpen || getSt(sid, q.id) !== "done");
+        if (!qs.length) return;
+        any = true;
+        h += `<h2 class="topic-title">${esc(t.name)}</h2>${t.desc ? `<p class="topic-desc">${esc(t.desc)}</p>` : ""}`;
+        h += qs.map(q => cardHTML(sid, q)).join("");
+      });
+      if (!any) h += `<div class="empty">🎉 Nothing left here – everything in this view is mastered.</div>`;
+      h += `</main></div>`;
+      $("#app").innerHTML = h;
+      document.title = d.title + " – " + HUB_TITLE;
+      renderMath();
+    }
+
+    /* ================= FLAG / REPORT ================= */
+    let flagCtx = null;
+    function toText(html) {
+      const d = document.createElement("div");
+      d.innerHTML = html.replace(/<svg[\s\S]*?<\/svg>/gi, "[diagram]").replace(/<br\s*\/?>/gi, "\n").replace(/<\/(p|li|tr|div|h4|ul|ol)>/gi, "\n");
+      return d.textContent.replace(/\n{3,}/g, "\n\n").trim();
+    }
+    const clip = (s, n) => s.length > n ? s.slice(0, n - 1) + "…" : s;
+    function findQ(sid, qid) {
+      for (const t of DATA[sid].topics) { const q = t.qs.find(x => x.id === qid); if (q) return { q, topic: t.name }; }
+    }
+    function openFlag(sid, qid) {
+      const f = findQ(sid, qid); if (!f) return;
+      flagCtx = { sid, qid, ...f };
+      $("#flagRef").textContent = DATA[sid].title + " · Q " + qid;
+      $("#flagText").value = ""; $("#flagMsg").textContent = ""; $("#flagMsg").className = "msg";
+      $("#flagSendBtn").disabled = false;
+      $("#flagDlg").showModal();
+      $("#flagText").focus();
+    }
+    async function sendFlag() {
+      const msg = $("#flagMsg"), btn = $("#flagSendBtn");
+      const note = $("#flagText").value.trim();
+      if (!note) { msg.className = "msg err"; msg.textContent = "Please describe the problem."; return; }
+      if (!DISCORD_WEBHOOK) { msg.className = "msg err"; msg.textContent = "Webhook not configured yet."; return; }
+      const { sid, qid, q, topic } = flagCtx, d = DATA[sid];
+      const payload = {
+        username: "Practice Hub",
+        embeds: [{
+          title: clip("⚑ Flagged: " + d.title + " – Q " + qid, 250),
+          description: clip(note, 4000),
+          color: 0xd9822b,
+          fields: [
+            { name: "Topic", value: clip(topic, 1000), inline: true },
+            { name: "Source", value: clip([q.src, q.marks && q.marks + " marks"].filter(Boolean).join(" · ") || "–", 1000), inline: true },
+            { name: "Question", value: clip(toText(q.q) || "–", 1000) },
+            { name: "Answer", value: clip(toText(q.ans) || "–", 1000) },
+            { name: "Explanation", value: clip(toText(q.exp) || "–", 1000) }
+          ],
+          footer: { text: d.cfg.file },
+          timestamp: new Date().toISOString()
+        }]
+      };
+      btn.disabled = true; msg.className = "msg"; msg.textContent = "Sending…";
+      try {
+        const r = await fetch(DISCORD_WEBHOOK, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        msg.className = "msg ok"; msg.textContent = "Sent. Thank you!";
+        setTimeout(() => { $("#flagDlg").close(); }, 900);
+      } catch (e) {
+        msg.className = "msg err"; msg.textContent = "Couldn't send (" + e.message + "). Try again.";
+        btn.disabled = false;
+      }
+    }
+
+    /* ================= ASK AI ================= */
+    const ASK_PROMPT = `Act as an excellent, patient tutor. Explain the following question in very easy English, assuming the student is a beginner.
+Start with the basic concepts needed to understand the question. Explain the reasoning step by step, making it intuitive through simple examples or analogies where helpful. Clearly explain why the correct answer is right and, if relevant, why other options are wrong. Explain technical terms in plain language.
+Keep the explanation focused, clear, and easy to follow. Avoid unnecessary details, but never skip a basic concept needed for understanding. End with a brief “Remember” takeaway highlighting the key idea for the exam.
+Question:
+{{QUESTION}}`;
+
+    const AI_TARGETS = {
+      claude: { name: "Claude", url: "https://claude.ai/new?q=" },
+      chatgpt: { name: "ChatGPT", url: "https://chatgpt.com/?q=" },
+      deepseek: { name: "DeepSeek", url: "https://chat.deepseek.com/", copyOnly: true }  // no known prefill param
+    };
+
+    const AI_KEY = "practicehub-ai";
+    let defaultAI = (() => { try { return localStorage.getItem(AI_KEY); } catch (e) { } })();
+    if (!AI_TARGETS[defaultAI]) defaultAI = "claude";
+
+    function askHTML() {
+      return `<div class="ask"><button class="btn askgo" data-a="ask">Ask ${AI_TARGETS[defaultAI].name}</button><button class="btn askpick" data-a="askmenu" aria-label="Choose AI" title="Choose AI">▾</button><div class="askmenu">${Object.entries(AI_TARGETS).map(([k, v]) => `<button data-a="ask" data-ai="${k}">${v.name}</button>`).join("")}</div></div>`;
+    }
+
+    function setDefaultAI(ai) {
+      if (!AI_TARGETS[ai] || ai === defaultAI) return;
+      defaultAI = ai;
+      try { localStorage.setItem(AI_KEY, ai); } catch (e) { }
+      document.querySelectorAll(".askgo").forEach(b => b.textContent = "Ask " + AI_TARGETS[ai].name);
+    }
+
+    function toast(msg) {
+      const el = document.createElement("div");
+      el.className = "toast"; el.textContent = msg;
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 4000);
+    }
+
+    function askAI(sid, qid, ai) {
+      const f = findQ(sid, qid), T = AI_TARGETS[ai];
+      if (!f || !T) return;
+      const prompt = ASK_PROMPT.replace("{{QUESTION}}", () => toText(f.q.q || ""));
+      const link = T.url + (T.copyOnly ? "" : encodeURIComponent(prompt));
+      const tooLong = link.length > 7000;                    // very long URLs get rejected
+      if (T.copyOnly || tooLong) {
+        try { navigator.clipboard.writeText(prompt); } catch (e) { }
+        toast("Prompt copied. Paste it into " + T.name + ".");
+        window.open(T.copyOnly ? T.url : T.url.split("?")[0], "_blank", "noopener");
+      } else {
+        window.open(link, "_blank", "noopener");
+      }
+    }
+
+    document.addEventListener("click", e => {                  // close dropdowns on outside click (and other open menus)
+      const mine = e.target.closest(".ask");
+      document.querySelectorAll(".ask.open").forEach(x => { if (x !== mine) x.classList.remove("open"); });
+    });
+
+    /* ================= MATH (KaTeX) ================= */
+function renderMath(){
+  if(typeof renderMathInElement !== "function") return;   // KaTeX not loaded yet
+  renderMathInElement(document.getElementById("app"), {
+    delimiters: [
+      {left:"$$",  right:"$$",  display:true},
+      {left:"\\[", right:"\\]", display:true},
+      {left:"\\(", right:"\\)", display:false}
+    ],
+    throwOnError: false
+  });
+}
+window.addEventListener("load", renderMath);   // first render, after the CDN scripts finish
+    /* ================= ROUTER & EVENTS ================= */
+    let currentSid = null;
+    function route() {
+      const m = location.hash.match(/^#\/(.+)$/);
+      const sid = m ? decodeURIComponent(m[1]) : null;
+      if (sid !== currentSid) { view = { topic: "all", onlyOpen: false }; currentSid = sid; }
+      sid ? renderSubject(sid) : renderHome();
+      window.scrollTo(0, 0);
+    }
+    window.addEventListener("hashchange", route);
+
+    function setAll(open) {
+      document.querySelectorAll(".card").forEach(c => {
+        c.querySelector(".answer").classList.toggle("open", open);
+        const b = c.querySelector('[data-a="toggle"]');
+        b.textContent = open ? "Hide answer" : "Show answer"; b.setAttribute("aria-expanded", open);
+      });
+    }
+
+    document.addEventListener("click", e => {
+      const t = e.target.closest("[data-a]"); if (!t) return;
+      const a = t.dataset.a, sid = currentSid;
+      if (a === "topic") { view.topic = t.dataset.t; renderSubject(sid); window.scrollTo(0, 0); }
+      else if (a === "flag") openFlag(sid, t.closest(".card").dataset.id);
+      else if (a === "askmenu") t.parentElement.classList.toggle("open");
+      else if (a === "ask") {
+        const ai = t.dataset.ai || defaultAI;
+        if (t.dataset.ai) setDefaultAI(ai);         // picking from the menu makes it the new default
+        t.closest(".ask").classList.remove("open");
+        askAI(sid, t.closest(".card").dataset.id, ai);
+      }
+      else if (a === "flagcancel") $("#flagDlg").close();
+      else if (a === "flagsend") sendFlag();
+      else if (a === "showall") setAll(true);
+      else if (a === "hideall") setAll(false);
+      else if (a === "filter") { view.onlyOpen = !view.onlyOpen; renderSubject(sid); }
+      else if (a === "reset") {
+        if (confirm("Reset progress for this subject?")) {
+          Object.keys(state.status).forEach(k => { if (k.startsWith(sid + "::")) delete state.status[k]; });
+          save(); renderSubject(sid);
+        }
+      }
+      else if (a === "resetall") {
+        if (confirm("Reset progress for ALL subjects?")) { state.status = {}; save(); renderHome(); }
+      }
+      else if (a === "toggle") {
+        const card = t.closest(".card"), ans = card.querySelector(".answer");
+        const open = ans.classList.toggle("open");
+        t.textContent = open ? "Hide answer" : "Show answer"; t.setAttribute("aria-expanded", open);
+      }
+      else if (a === "done" || a === "review") {
+        const card = t.closest(".card"), k = key(sid, card.dataset.id);
+        if (state.status[k] === a) delete state.status[k]; else state.status[k] = a;
+        save();
+        const st = state.status[k];
+        card.className = "card " + (st || "");
+        card.querySelector('[data-a="done"]').classList.toggle("on", st === "done");
+        card.querySelector('[data-a="review"]').classList.toggle("on", st === "review");
+        $("#subStats").innerHTML = statPills(sid);
+      }
+    });
+
+    loadAll().then(route);
+  </script>
+</body>
+
+</html>
