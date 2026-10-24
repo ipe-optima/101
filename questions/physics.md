@@ -3,7 +3,7 @@ title: General Physics
 code: PHY 0533 1107G / PHY 107G
 description: Past questions with corrected statements, worked answers, and explanations.
 icon: ⌘
-color: #3b5bdb
+color: #3bdb70
 ---
 
 ## Mechanics: Projectile Motion

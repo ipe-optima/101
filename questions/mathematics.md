@@ -3,7 +3,7 @@ title: Mathematics
 code: MAT 0541 1103G
 description: Some questions I could not retrieve. Especially those before '19. Super blur.
 icon: ࿕
-color: #3b5bdb
+color: #b30000
 ---
 
 ## Limits, Continuity and Differentiation
