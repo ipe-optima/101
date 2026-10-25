@@ -3,7 +3,7 @@ title: General Physics
 code: PHY 0533 1107G / PHY 107G
 description: 
 icon: ⌘
-color: "#3bdb70"
+color: #3bdb70
 ---
 
 > **Editorial note:** Original question statements and exam labels are retained. Clearly identifiable calculation mistakes have been corrected; questionable source values are flagged rather than silently replaced. Numerical work generally assumes \(g=9.81\,\mathrm{m/s^2}\).
