@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>101 Non Major Subs Questionnaire</title>
+  <title>IPE 101 Questionnaire</title>
   <meta name="description" content="Practice past exam questions by subject and topic, with answers, explanations and progress tracking.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -954,7 +954,7 @@
       let total = 0, done = 0, rev = 0;
       loadedIds.forEach(id => { const s = stats(DATA[id].qs, id); total += s.total; done += s.done; rev += s.rev; });
 
-      let h = `<header><h1>🎓 ${esc(HUB_TITLE)}</h1><div class="sub">${esc(HUB_SUBTITLE)}</div>
+      let h = `<header><h1>${esc(HUB_TITLE)}</h1><div class="sub">${esc(HUB_SUBTITLE)}</div>
     <div class="stats">
       <span class="pill">${loadedIds.length} subject${loadedIds.length === 1 ? "" : "s"}</span>
       <span class="pill">${total} questions</span>
