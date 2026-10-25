@@ -1,7 +1,7 @@
 ---
 title: Mathematics
 code: MAT 0541 1103G
-description: Past-paper mathematics questions reorganized by concept, with concise answers and beginner-friendly worked explanations. Some older questions could not be recovered clearly from the source.
+description: 
 icon: ࿕
 color: #b30000
 ---

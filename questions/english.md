@@ -1,7 +1,7 @@
 ---
 title: Effective Communication in English
 code: ENG 0231 1101G
-description: Most of the past questions were retrieved.
+description: 
 icon: ℈
 color: #d9480f
 ---

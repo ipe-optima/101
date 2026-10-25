@@ -1,7 +1,7 @@
 ---
 title: General Chemistry
 code: CHE 0531 1101G
-description: This subject is relatively new in IPE.
+description: 
 icon: ࿌
 color: #3b5bdb
 ---

@@ -1,7 +1,7 @@
 ---
 title: General Physics
 code: PHY 0533 1107G / PHY 107G
-description: Concept-grouped past physics questions with concise answers, worked solutions, and beginner-friendly explanations.
+description: 
 icon: ⌘
 color: "#3bdb70"
 ---
