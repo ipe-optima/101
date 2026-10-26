@@ -857,6 +857,97 @@
         transform: translate(-50%, 6px)
       }
     }
+
+    /* ---------- Practice Exams ---------- */
+    .exam-bar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 10px 0;
+      background: color-mix(in srgb, var(--bg) 90%, transparent);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .exam-bar .name {
+      font-weight: 600;
+      font-size: .95rem
+    }
+
+    .timer {
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: .02em;
+      padding: 4px 14px;
+      border-radius: 10px;
+      background: var(--card);
+      border: 1px solid var(--line)
+    }
+
+    .timer.low {
+      color: var(--warn);
+      border-color: var(--warn);
+      background: var(--warn-soft)
+    }
+
+    .timer.over {
+      color: var(--muted)
+    }
+
+    .exam-banner {
+      background: var(--good-soft);
+      border: 1px solid var(--good);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin: 18px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .exam-banner b {
+      font-size: 1.15rem
+    }
+
+    .setcard .status {
+      font-size: .82rem;
+      color: var(--muted);
+      margin: 8px 0 12px
+    }
+
+    .setcard .btn {
+      width: 100%
+    }
+
+    .selfmark {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      font-size: .88rem
+    }
+
+    .selfmark input {
+      width: 76px;
+      font: inherit;
+      padding: 5px 8px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--text)
+    }
   </style>
 </head>
 
@@ -890,6 +981,12 @@
       { id: "english",   file: "questions/english.md" },
       { id: "math",      file: "questions/mathematics_revised.md" },
       { id: "physics",      file: "questions/physics_revised.md" },
+    ];
+
+    /* Practice exams: one md file per exam. Add more entries here. */
+    const EXAMS = [
+      { id: "mock-chemistry", file: "exams/chemistry-mock.md" },
+      /* { id: "mock-physics", file: "exams/physics.md", icon: "📝", color: "#e8590c" }, */
     ];
 
     const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1563438571963023363/qx2kxzt9H1CQpXfaPWQKEKQxUtTKmIux3Ll1i-JKGVyafwWCGGEIn5GBmiBtMp9Nkks_";
@@ -1105,6 +1202,22 @@
     </a>`;
       }).join("") + `</div>`;
 
+      const exIds = EXAMS.filter(e => EXDATA[e.id]).map(e => e.id);
+      if (exIds.length) {
+        h += `<h2 class="topic-title" style="margin-top:40px">Practice Exams</h2>
+      <p class="topic-desc">Self-evaluation mock exams with timer.</p>
+      <div class="grid">` + exIds.map(id => {
+          const d = EXDATA[id];
+          const done = d.sets.filter((s, i) => exs[exKey(id, i)] && exs[exKey(id, i)].finished).length;
+          return `<a class="subject scope" href="#/exam/${encodeURIComponent(id)}" style="--accent:${esc(d.color)}">
+        <div class="ico">${esc(d.icon)}</div>
+        <h3>${esc(d.title)}</h3>
+        <div class="code">${esc(d.code)}</div>
+        <p>⏱ ${esc(d.timeLabel)}</p>
+        <div class="mini">${d.sets.length} set${d.sets.length === 1 ? "" : "s"} · ${done} completed</div>
+      </a>`;
+        }).join("") + `</div>`;
+      }
       if (!loadedIds.length && !failed.length) h += `<div class="empty">No subjects declared yet. Add one to <code>SUBJECTS</code> in index.html.</div>`;
       if (total) h += `<p style="margin-top:20px"><button class="btn link" data-a="resetall">Reset all progress</button></p>`;
       $("#app").innerHTML = h;
@@ -1196,13 +1309,20 @@
       return d.textContent.replace(/\n{3,}/g, "\n\n").trim();
     }
     const clip = (s, n) => s.length > n ? s.slice(0, n - 1) + "…" : s;
+    const srcOf = sid => String(sid).startsWith("exam::") ? EXDATA[sid.slice(6)] : DATA[sid];
     function findQ(sid, qid) {
+      if (String(sid).startsWith("exam::")) {                 // practice-exam question
+        const ex = EXDATA[sid.slice(6)], ctx = examCtx();
+        const set = ex && ex.sets[ctx ? ctx.si : 0];
+        const q = set && set.qs.find(x => x.id === qid);
+        return q ? { q, topic: set.name } : undefined;
+      }
       for (const t of DATA[sid].topics) { const q = t.qs.find(x => x.id === qid); if (q) return { q, topic: t.name }; }
     }
     function openFlag(sid, qid) {
       const f = findQ(sid, qid); if (!f) return;
       flagCtx = { sid, qid, ...f };
-      $("#flagRef").textContent = DATA[sid].title + " · Q " + qid;
+      $("#flagRef").textContent = srcOf(sid).title + " · Q " + qid;
       $("#flagText").value = ""; $("#flagMsg").textContent = ""; $("#flagMsg").className = "msg";
       $("#flagSendBtn").disabled = false;
       $("#flagDlg").showModal();
@@ -1213,7 +1333,7 @@
       const note = $("#flagText").value.trim();
       if (!note) { msg.className = "msg err"; msg.textContent = "Please describe the problem."; return; }
       if (!DISCORD_WEBHOOK) { msg.className = "msg err"; msg.textContent = "Webhook not configured yet."; return; }
-      const { sid, qid, q, topic } = flagCtx, d = DATA[sid];
+      const { sid, qid, q, topic } = flagCtx, d = srcOf(sid);
       const payload = {
         username: "Practice Hub",
         embeds: [{
@@ -1324,9 +1444,249 @@ function renderMath(){
   });
 }
 window.addEventListener("load", renderMath);   // first render, after the CDN scripts finish
+    /* ================= PRACTICE EXAMS ================= */
+    const EXDATA = {};
+    const EXSTORE = "practice_hub_exams_v1";
+    let exs = {};   // "examId::setIndex" -> { start, end, finished, scores:{qid:marks} }
+    try { const raw = localStorage.getItem(EXSTORE); if (raw) exs = JSON.parse(raw) || {}; } catch (e) { }
+    function saveEx() { try { localStorage.setItem(EXSTORE, JSON.stringify(exs)); } catch (e) { } }
+    const exKey = (id, si) => id + "::" + si;
+    let examTimer = null;
+
+    function parseMins(s) {
+      let tot = 0, found = false;
+      String(s || "").replace(/([\d.]+)\s*(h[a-z]*|m[a-z]*)?/gi, (_, n, u) => { found = true; tot += /^h/i.test(u || "") ? n * 60 : +n; });
+      return found ? tot : 60;
+    }
+
+    function parseExam(text) {
+      const lines = text.replace(/\r/g, "").split("\n");
+      let i = 0; const meta = {};
+      if (lines[0] && lines[0].trim() === "---") {
+        i = 1;
+        while (i < lines.length && lines[i].trim() !== "---") {
+          const m = lines[i].match(/^(\w+)\s*:\s*(.*)$/); if (m) meta[m[1].toLowerCase()] = m[2].trim();
+          i++;
+        }
+        i++;
+      }
+      const sets = []; let set = null, q = null, sect = "q";
+      for (; i < lines.length; i++) {
+        const l = lines[i];
+        if (/^# /.test(l)) { set = { name: l.slice(2).trim(), qs: [] }; sets.push(set); q = null; continue; }
+        if (/^### /.test(l)) {
+          if (!set) { set = { name: "Set", qs: [] }; sets.push(set); }
+          const p = l.slice(4).split("|").map(s => s.trim());
+          q = { id: p[0], src: p[1] || "", marks: p[2] || "", q: [], ans: [], exp: [] };
+          set.qs.push(q); sect = "q"; continue;
+        }
+        if (q && /^#### Answer\s*$/i.test(l)) { sect = "ans"; continue; }
+        if (q && /^#### Explanation\s*$/i.test(l)) { sect = "exp"; continue; }
+        if (q) q[sect].push(l);
+      }
+      sets.forEach(s => s.qs.forEach(q => { q.q = md(q.q.join("\n")); q.ans = md(q.ans.join("\n")); q.exp = md(q.exp.join("\n")); }));
+      return { meta, sets };
+    }
+
+    async function loadExams() {
+      await Promise.all(EXAMS.map(async cfg => {
+        try {
+          const r = await fetch(cfg.file, { cache: "no-cache" });
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          const d = parseExam(await r.text());
+          EXDATA[cfg.id] = {
+            cfg, sets: d.sets,
+            title: cfg.title || d.meta.title || cfg.id,
+            code: d.meta.code || "",
+            timeLabel: d.meta.time || "1 Hour",
+            mins: parseMins(d.meta.time),
+            icon: cfg.icon || d.meta.icon || "Ж",
+            color: cfg.color || d.meta.color || "#d9822b"
+          };
+        } catch (e) { }
+      }));
+    }
+
+    const setMarks = set => set.qs.reduce((a, q) => a + (parseFloat(q.marks) || 0), 0);
+    const attScore = att => Object.values(att.scores || {}).reduce((a, b) => a + (+b || 0), 0);
+    const fmtNum = n => Number.isInteger(n) ? String(n) : n.toFixed(1);
+    function fmtTime(ms) {
+      const s = Math.max(0, Math.ceil(ms / 1000));
+      const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), sec = s % 60;
+      return h + ":" + String(m).padStart(2, "0") + ":" + String(sec).padStart(2, "0");
+    }
+    /* auto-finish an attempt whose time has already run out (e.g. tab was closed) */
+    function syncAttempt(att, d) {
+      if (att && !att.finished) {
+        const deadline = att.start + d.mins * 60000;
+        if (Date.now() >= deadline) { att.finished = true; att.end = deadline; saveEx(); }
+      }
+      return att;
+    }
+
+    function renderExamList(id) {
+      const d = EXDATA[id];
+      if (!d) { location.hash = "#/"; return; }
+      let h = `<div class="scope" style="--accent:${esc(d.color)}">
+      <div class="subject-header"><a class="back" href="#/">← Home</a></div>
+      <header><h1>${esc(d.icon)} ${esc(d.title)}</h1>
+        <div class="sub">${[d.code, "Time : " + d.timeLabel].filter(Boolean).map(esc).join(" · ")}</div></header>
+      <p class="topic-desc" style="margin-top:14px">Choose a set. The timer starts when you begin and cannot be paused. Answers unlock when time is up or when you press <b>Finished</b>.</p>
+      <div class="grid">`;
+      d.sets.forEach((s, i) => {
+        const att = syncAttempt(exs[exKey(id, i)], d);
+        let status, label;
+        if (!att) { status = "Not started"; label = "Start exam"; }
+        else if (att.finished) { status = `✓ Completed · ${fmtNum(attScore(att))} / ${fmtNum(setMarks(s))} marks`; label = "Review"; }
+        else { status = "⏱ In progress"; label = "Resume"; }
+        h += `<div class="subject setcard">
+        <h3>${esc(s.name)}</h3>
+        <div class="code">${s.qs.length} questions · ${fmtNum(setMarks(s))} marks</div>
+        <div class="status">${esc(status)}</div>
+        <button class="btn primary" data-a="exopen" data-set="${i}">${label}</button>
+      </div>`;
+      });
+      h += `</div></div>`;
+      $("#app").innerHTML = h;
+      document.title = d.title + " – " + HUB_TITLE;
+    }
+
+    function renderExamSet(id, si) {
+      const d = EXDATA[id], set = d && d.sets[si];
+      if (!set) { location.hash = "#/exam/" + encodeURIComponent(id); return; }
+      const att = syncAttempt(exs[exKey(id, si)], d);
+      if (!att) { location.hash = "#/exam/" + encodeURIComponent(id); return; }   // must start from the set list
+      const max = setMarks(set);
+      let h = `<div class="scope" style="--accent:${esc(d.color)}">`;
+      if (!att.finished) {
+        h += `<div class="exam-bar"><div class="name">${esc(d.title)} · ${esc(set.name)}</div>
+        <div style="display:flex;gap:10px;align-items:center"><span class="timer" id="timer">--:--:--</span>
+        <button class="btn primary" data-a="exfinish">Finished</button></div></div>`;
+      } else {
+        h += `<div class="subject-header"><a class="back" href="#/exam/${encodeURIComponent(id)}">← ${esc(d.title)} sets</a>
+        <button class="btn" data-a="exretake">Retake this set</button></div>
+        <div class="exam-banner"><div><b>${esc(set.name)} — finished</b><div class="sub">Time taken: ${fmtTime(att.end - att.start)} of ${esc(d.timeLabel)}. Mark yourself honestly using the answers below.</div></div>
+        <div><b id="exScore">${fmtNum(attScore(att))} / ${fmtNum(max)}</b> marks</div></div>`;
+      }
+      h += `<header><h1>${esc(set.name)}</h1><div class="sub">${[d.code, d.title].filter(Boolean).map(esc).join(" · ")} · ${fmtNum(max)} marks</div></header><main>`;
+      set.qs.forEach(q => {
+        const m = parseFloat(q.marks) || 0;
+        const got = att.scores && att.scores[q.id];
+        h += `<article class="card" data-id="${esc(q.id)}">
+        <div class="meta"><span class="qid">Q ${esc(q.id)}</span>${q.src ? `<span class="tag">${esc(q.src)}</span>` : ""}${q.marks ? `<span class="tag">${esc(q.marks)} marks</span>` : ""}</div>
+        <div class="q">${q.q}</div>`;
+        if (att.finished) {
+          h += `<div class="answer open"><h4>Answer</h4>${q.ans}<h4>Explanation</h4>${q.exp}
+          <div class="selfmark">My marks:
+            <input type="number" class="scoreinp" min="0" max="${m}" step="0.5" value="${got === undefined ? "" : got}" placeholder="0">
+            <span>/ ${fmtNum(m)}</span>
+            <button class="btn" data-a="exfull" data-max="${m}">Full marks</button>
+            <button class="btn" data-a="exzero">Zero</button>
+          </div>
+          <div class="flagrow">${askHTML()}<button class="btn flag" data-a="flag">⚑ Flag wrong</button></div></div>`;
+        }
+        h += `</article>`;
+      });
+      h += `</main></div>`;
+      $("#app").innerHTML = h;
+      document.title = set.name + " – " + d.title;
+      renderMath();
+      if (!att.finished) {
+        const tick = () => {
+          const left = att.start + d.mins * 60000 - Date.now();
+          if (left <= 0) { finishExam(id, si, true); return; }
+          const el = $("#timer"); if (!el) return;
+          el.textContent = fmtTime(left);
+          el.classList.toggle("low", left <= 5 * 60000);
+        };
+        tick();
+        clearInterval(examTimer);
+        examTimer = setInterval(tick, 1000);
+      }
+    }
+
+    function finishExam(id, si, auto) {
+      const d = EXDATA[id], att = exs[exKey(id, si)];
+      if (!att || att.finished) return;
+      att.finished = true;
+      att.end = Math.min(Date.now(), att.start + d.mins * 60000);
+      saveEx();
+      clearInterval(examTimer);
+      renderExamSet(id, si);
+      window.scrollTo(0, 0);
+      if (auto) toast("Time is up! Answers are now unlocked.");
+    }
+
+    function examCtx() {
+      const m = location.hash.match(/^#\/exam\/([^/]+)\/(\d+)$/);
+      return m ? { id: decodeURIComponent(m[1]), si: +m[2] } : null;
+    }
+
+    function updateExScore(ctx) {
+      const att = exs[exKey(ctx.id, ctx.si)], el = $("#exScore");
+      if (el) el.textContent = fmtNum(attScore(att)) + " / " + fmtNum(setMarks(EXDATA[ctx.id].sets[ctx.si]));
+    }
+    function setMark(ctx, qid, val) {
+      const att = exs[exKey(ctx.id, ctx.si)];
+      att.scores = att.scores || {};
+      if (val === "" || val === null) delete att.scores[qid]; else att.scores[qid] = val;
+      saveEx(); updateExScore(ctx);
+    }
+
+    document.addEventListener("input", e => {
+      if (!e.target.classList.contains("scoreinp")) return;
+      const ctx = examCtx(); if (!ctx) return;
+      const max = parseFloat(e.target.max) || 0;
+      let v = e.target.value === "" ? "" : Math.min(max, Math.max(0, parseFloat(e.target.value) || 0));
+      setMark(ctx, e.target.closest(".card").dataset.id, v);
+    });
+
+    document.addEventListener("click", e => {
+      const t = e.target.closest("[data-a]"); if (!t) return;
+      const a = t.dataset.a;
+      if (!/^ex/.test(a)) return;
+      const hm = location.hash.match(/^#\/exam\/([^/]+)/);
+      const id = hm ? decodeURIComponent(hm[1]) : null, d = id && EXDATA[id];
+      if (!d) return;
+      if (a === "exopen") {
+        const si = +t.dataset.set, k = exKey(id, si);
+        if (!exs[k]) {
+          if (!confirm(`Start "${d.sets[si].name}" now?\n\nThe ${d.timeLabel} timer begins immediately and cannot be paused.`)) return;
+          exs[k] = { start: Date.now(), finished: false, scores: {} }; saveEx();
+        }
+        location.hash = "#/exam/" + encodeURIComponent(id) + "/" + si;
+      }
+      else if (a === "exfinish") {
+        const ctx = examCtx(); if (!ctx) return;
+        if (confirm("Finish the exam now? You cannot go back to answering after this.")) finishExam(ctx.id, ctx.si);
+      }
+      else if (a === "exretake") {
+        const ctx = examCtx(); if (!ctx) return;
+        if (confirm("Discard this attempt and score, and return to the set list?")) {
+          delete exs[exKey(ctx.id, ctx.si)]; saveEx();
+          location.hash = "#/exam/" + encodeURIComponent(ctx.id);
+        }
+      }
+      else if (a === "exfull" || a === "exzero") {
+        const ctx = examCtx(); if (!ctx) return;
+        const card = t.closest(".card"), inp = card.querySelector(".scoreinp");
+        const v = a === "exfull" ? parseFloat(t.dataset.max) || 0 : 0;
+        inp.value = v; setMark(ctx, card.dataset.id, v);
+      }
+    });
+
     /* ================= ROUTER & EVENTS ================= */
     let currentSid = null;
     function route() {
+      clearInterval(examTimer);
+      const em = location.hash.match(/^#\/exam\/([^/]+)(?:\/(\d+))?$/);
+      if (em) {
+        const eid = decodeURIComponent(em[1]);
+        currentSid = "exam::" + eid;   // lets the Ask AI / Flag buttons resolve the exam question
+        em[2] !== undefined ? renderExamSet(eid, +em[2]) : renderExamList(eid);
+        window.scrollTo(0, 0);
+        return;
+      }
       const m = location.hash.match(/^#\/(.+)$/);
       const sid = m ? decodeURIComponent(m[1]) : null;
       if (sid !== currentSid) { view = { topic: "all", onlyOpen: false }; currentSid = sid; }
@@ -1396,7 +1756,7 @@ window.addEventListener("load", renderMath);   // first render, after the CDN sc
       }
     });
 
-    loadAll().then(route);
+    Promise.all([loadAll(), loadExams()]).then(route);
 
 
     /* ========== */
