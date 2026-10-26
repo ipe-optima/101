@@ -1244,9 +1244,20 @@
     }
 
     /* ================= ASK AI ================= */
-    const ASK_PROMPT = `Act as an excellent, patient tutor. Explain the following question in very easy English, assuming the student is a beginner.
-Start with the basic concepts needed to understand the question. Explain the reasoning step by step, making it intuitive through simple examples or analogies where helpful. Clearly explain why the correct answer is right and, if relevant, why other options are wrong. Explain technical terms in plain language.
-Keep the explanation focused, clear, and easy to follow. Avoid unnecessary details, but never skip a basic concept needed for understanding. End with a brief “Remember” takeaway highlighting the key idea for the exam.
+const ASK_PROMPT = `You are a subject-matter expert answering an exam question. Correctness and accuracy come first; after that the most important thing is to explain in simple intuitive term. .
+
+Before answering, use web search to verify the key facts, definitions, formulas, values, and the correct answer against authoritative sources (Wikipedia, standard textbooks, official or standards bodies, university and government sites, peer-reviewed work). Do not rely on memory alone. If sources conflict, the question is ambiguous, or the given answer looks wrong, say so explicitly instead of guessing.
+
+Reply in this format:
+1. Answer: the correct answer, stated directly.
+2. Explanation: the exact reasoning or derivation, step by step, with every calculation double-checked. If options are given, state briefly why each wrong option is wrong.
+3. Key concepts: only the definitions or principles needed to follow the explanation, in plain language.
+4. Remember: a one-line exam takeaway.
+
+make sure the build the intuition and step by step foundation required to answer the question, and explain the reasoning behind each step. Use simple language and avoid jargon. If a diagram or table would help, describe it in words.
+
+Rules: Never invent facts, figures, or citations. Mark anything you could not verify as "unverified". Be concise.
+
 Question:
 {{QUESTION}}`;
 
