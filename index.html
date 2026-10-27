@@ -948,6 +948,28 @@
       background: var(--bg);
       color: var(--text)
     }
+
+        .subject-header {
+      flex-wrap: wrap;
+      row-gap: 8px
+    }
+
+    .hdr-prog {
+      flex: 1 0 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums
+    }
+
+    .hdr-prog .bar {
+      flex: 1;
+      min-width: 0;
+      height: 4px
+    }
   </style>
 </head>
 
@@ -1253,8 +1275,17 @@
       const s = stats(DATA[sid].qs, sid);
       return `<span class="pill">${s.total} questions</span>
     <span class="pill">✓ ${s.done} mastered</span>
-    <span class="pill">↻ ${s.rev} to review</span>
-    <div class="bar" title="Progress"><i style="width:${s.total ? s.done / s.total * 100 : 0}%"></i></div>`;
+    <span class="pill">↻ ${s.rev} to review</span>`;
+    }
+
+    function progText(sid) {
+      const s = stats(DATA[sid].qs, sid);
+      return s.done + "/" + s.total + " Mastered";
+    }
+    function updateHdrProg(sid) {
+      const s = stats(DATA[sid].qs, sid);
+      $("#hdrProgTxt").textContent = progText(sid);
+      $("#hdrProgBar").style.width = (s.total ? s.done / s.total * 100 : 0) + "%";
     }
 
     function renderSubject(sid) {
@@ -1275,6 +1306,10 @@
           ${d.topics.map((t, i) => `<button class="chip ${view.topic === String(i) ? "on" : ""}" data-a="topic" data-t="${i}">${esc(t.name)}<small>${t.qs.length}</small></button>`).join("")}
         </nav>
       </div>
+      <div class="hdr-prog">
+        <span id="hdrProgTxt">${progText(sid)}</span>
+        <div class="bar"><i id="hdrProgBar" style="width:${d.qs.length ? stats(d.qs, sid).done / d.qs.length * 100 : 0}%"></i></div>
+      </div>
     </div>
     <header><h1>${esc(d.icon)} ${esc(d.title)}</h1>
       <div class="sub">${[d.code, d.desc].filter(Boolean).map(esc).join(" · ")}</div>
@@ -1282,7 +1317,7 @@
     <div class="tools">
       <button class="btn" data-a="showall">Show all answers</button>
       <button class="btn" data-a="hideall">Hide all answers</button>
-      <button class="btn" data-a="filter">${view.onlyOpen ? "Showing: Not mastered (click for all)" : "Only show: Not mastered"}</button>
+      <button class="btn" data-a="filter">${view.onlyOpen ? "Showing: Not mastered (click for all)" : "Only show: Review Later"}</button>
       <button class="btn" data-a="reset">Reset this subject</button>
     </div><main>`;
       let any = false;
@@ -1753,6 +1788,7 @@ window.addEventListener("load", renderMath);   // first render, after the CDN sc
         card.querySelector('[data-a="done"]').classList.toggle("on", st === "done");
         card.querySelector('[data-a="review"]').classList.toggle("on", st === "review");
         $("#subStats").innerHTML = statPills(sid);
+        updateHdrProg(sid);
       }
     });
 
