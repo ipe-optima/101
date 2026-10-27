@@ -1,5 +1,5 @@
 ---
-title: General Chemistry
+title: General Chemistry Practice Exam
 code: CHE 0531 1101G
 time : 3 Hours
 icon: ࿌
