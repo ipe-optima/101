@@ -1,0 +1,112 @@
+    /* ---------- Practice Exams ---------- */
+    .exam-bar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 10px 0;
+      background: color-mix(in srgb, var(--bg) 90%, transparent);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .exam-bar .name {
+      font-weight: 600;
+      font-size: .95rem
+    }
+
+    .timer {
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: .02em;
+      padding: 4px 14px;
+      border-radius: 10px;
+      background: var(--card);
+      border: 1px solid var(--line)
+    }
+
+    .timer.low {
+      color: var(--warn);
+      border-color: var(--warn);
+      background: var(--warn-soft)
+    }
+
+    .timer.over {
+      color: var(--muted)
+    }
+
+    .exam-banner {
+      background: var(--good-soft);
+      border: 1px solid var(--good);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin: 18px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .exam-banner b {
+      font-size: 1.15rem
+    }
+
+    .setcard .status {
+      font-size: .82rem;
+      color: var(--muted);
+      margin: 8px 0 12px
+    }
+
+    .setcard .btn {
+      width: 100%
+    }
+
+    .selfmark {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      font-size: .88rem
+    }
+
+    .selfmark input {
+      width: 76px;
+      font: inherit;
+      padding: 5px 8px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--text)
+    }
+
+        .subject-header {
+      flex-wrap: wrap;
+      row-gap: 8px
+    }
+
+    .hdr-prog {
+      flex: 1 0 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums
+    }
+
+    .hdr-prog .bar {
+      flex: 1;
+      min-width: 0;
+      height: 4px
+    }

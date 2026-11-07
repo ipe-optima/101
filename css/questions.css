@@ -1,0 +1,335 @@
+    .tools {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 14px 0
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--text);
+      padding: 7px 14px;
+      border-radius: 9px;
+      font: inherit;
+      font-size: .86rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background .15s, border-color .15s, color .15s, filter .15s, box-shadow .15s
+    }
+
+    .btn:hover {
+      background: var(--card-2);
+      border-color: var(--line-strong)
+    }
+
+    .btn:focus-visible,
+    .chip:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 2px
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 30%, transparent)
+    }
+
+    .btn.primary:hover {
+      filter: brightness(1.12)
+    }
+
+    .btn.good.on {
+      background: var(--good-soft);
+      border-color: var(--good);
+      color: var(--good)
+    }
+
+    .btn.warn.on {
+      background: var(--warn-soft);
+      border-color: var(--warn);
+      color: var(--warn)
+    }
+
+    .btn.link {
+      background: none;
+      border: none;
+      color: var(--muted);
+      text-decoration: underline;
+      padding: 4px 0
+    }
+
+    .topic-title {
+      margin: 30px 0 4px;
+      font-size: 1.2rem;
+      font-weight: 650;
+      letter-spacing: -.01em
+    }
+
+    .topic-desc {
+      color: var(--muted);
+      font-size: .9rem;
+      margin: 0 0 14px
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin: 0 0 14px;
+      box-shadow: var(--shadow);
+      transition: border-color .2s
+    }
+
+    .card:hover {
+      border-color: var(--line-strong)
+    }
+
+    .card.done {
+      box-shadow: inset 3px 0 0 var(--good), var(--shadow)
+    }
+
+    .card.review {
+      box-shadow: inset 3px 0 0 var(--warn), var(--shadow)
+    }
+
+    .meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 10px
+    }
+
+    .qid {
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: .01em
+    }
+
+    .tag {
+      font-size: .72rem;
+      font-weight: 500;
+      background: var(--accent-soft);
+      color: var(--ink);
+      padding: 2px 9px;
+      border-radius: 99px
+    }
+
+    .tag.or {
+      background: var(--warn-soft);
+      color: var(--warn)
+    }
+
+    .q {
+      margin: 0 0 12px
+    }
+
+    .q p,
+    .answer p {
+      margin: 6px 0
+    }
+
+    .q ul,
+    .q ol {
+      margin: 6px 0 0
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .answer {
+      display: none;
+      margin-top: 16px;
+      background: var(--ans);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 18px
+    }
+
+    .answer.open {
+      display: block;
+      animation: reveal .22s ease
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(-4px)
+      }
+    }
+
+    .answer h4 {
+      margin: 14px 0 4px;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink)
+    }
+
+    .answer>h4:first-child {
+      margin-top: 0
+    }
+
+    .answer ul,
+    .answer ol {
+      margin: 4px 0;
+      padding-left: 22px
+    }
+
+    .final {
+      background: var(--good-soft);
+      border-left: 3px solid var(--good);
+      padding: 6px 12px;
+      border-radius: 6px;
+      margin: 8px 0;
+      font-weight: 600
+    }
+
+    .eq {
+      background: var(--code);
+      padding: 6px 12px;
+      border-radius: 6px;
+      margin: 6px 0;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: .92rem;
+      overflow-x: auto
+    }
+
+    code {
+      background: var(--code);
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-size: .9em
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: .9rem
+    }
+
+    td,
+    th {
+      border: 1px solid var(--line);
+      padding: 5px 10px;
+      text-align: left;
+      vertical-align: top
+    }
+
+    th {
+      background: var(--code)
+    }
+
+    svg {
+      max-width: 100%;
+      height: auto
+    }
+
+    svg text {
+      fill: var(--text);
+      font-family: system-ui, sans-serif
+    }
+
+    .flagrow {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line)
+    }
+
+    .btn.flag {
+      font-size: .8rem;
+      color: var(--muted);
+      border-color: transparent;
+      background: none
+    }
+
+    .btn.flag:hover {
+      color: var(--warn);
+      background: var(--warn-soft);
+      border-color: transparent
+    }
+
+    dialog {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--card);
+      color: var(--text);
+      padding: 22px;
+      width: min(480px, 92vw);
+      box-shadow: var(--shadow-lg)
+    }
+
+    dialog::backdrop {
+      background: rgba(0, 0, 0, .55);
+      -webkit-backdrop-filter: blur(3px);
+      backdrop-filter: blur(3px)
+    }
+
+    dialog h3 {
+      margin: 0 0 4px;
+      font-size: 1.1rem
+    }
+
+    dialog .ref {
+      color: var(--muted);
+      font-size: .85rem;
+      margin-bottom: 10px
+    }
+
+    dialog textarea {
+      width: 100%;
+      min-height: 110px;
+      resize: vertical;
+      font: inherit;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--text)
+    }
+
+    dialog .row {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+      margin-top: 12px;
+      align-items: center
+    }
+
+    dialog .msg {
+      margin-right: auto;
+      font-size: .85rem
+    }
+
+    dialog .msg.err {
+      color: var(--warn)
+    }
+
+    dialog .msg.ok {
+      color: var(--good)
+    }
+
+    .empty {
+      color: var(--muted);
+      text-align: center;
+      padding: 30px
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: .82rem;
+      margin-top: 30px;
+      text-align: center
+    }

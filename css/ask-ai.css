@@ -1,0 +1,102 @@
+    /* ---------- Ask AI (split button) ---------- */
+    .ask {
+      position: relative;
+      display: inline-flex;
+      border-radius: 9px;
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--ai) 38%, transparent);
+      background: var(--ai-soft);
+      transition: box-shadow .2s, background .2s
+    }
+
+    .ask:hover,
+    .ask.open {
+      background: color-mix(in srgb, var(--ai) 18%, transparent);
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--ai) 60%, transparent), 0 6px 20px color-mix(in srgb, var(--ai) 22%, transparent)
+    }
+
+    .ask .btn {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--ai-ink);
+      background: none;
+      border: 0
+    }
+
+    .ask .askgo {
+      padding-right: 12px;
+      border-radius: 9px 0 0 9px
+    }
+
+    .ask .askpick {
+      padding: 7px 9px;
+      border-radius: 0 9px 9px 0;
+      border-left: 1px solid color-mix(in srgb, var(--ai) 30%, transparent)
+    }
+
+    .ask .btn:hover {
+      background: color-mix(in srgb, var(--ai) 12%, transparent)
+    }
+
+    .askmenu {
+      display: none;
+      position: absolute;
+      right: 0;
+      bottom: 100%;
+      margin-bottom: 6px;
+      z-index: 10;
+      background: var(--card-2);
+      border: 1px solid var(--line-strong);
+      border-radius: 10px;
+      min-width: 160px;
+      padding: 4px;
+      box-shadow: var(--shadow-lg)
+    }
+
+    .ask.open .askmenu {
+      display: block;
+      animation: reveal .15s ease
+    }
+
+    .askmenu button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 8px 12px;
+      border: 0;
+      border-radius: 7px;
+      background: none;
+      color: var(--text);
+      font: inherit;
+      font-size: .86rem;
+      cursor: pointer
+    }
+
+    .askmenu button:hover {
+      background: var(--ai-soft);
+      color: var(--ai-ink)
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      background: var(--card-2);
+      color: var(--text);
+      border: 1px solid var(--line-strong);
+      box-shadow: var(--shadow-lg);
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: .86rem;
+      z-index: 50;
+      max-width: 90vw;
+      animation: toast-in .2s ease
+    }
+
+    @keyframes toast-in {
+      from {
+        opacity: 0;
+        transform: translate(-50%, 6px)
+      }
+    }
+
