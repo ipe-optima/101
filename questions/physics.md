@@ -6,13 +6,12 @@ icon: ⌘
 color: #3bdb70
 ---
 
-> **Editorial note:** Original question statements and exam labels are retained. Clearly identifiable calculation mistakes have been corrected; questionable source values are flagged rather than silently replaced. Numerical work generally assumes \(g=9.81\,\mathrm{m/s^2}\).
 
 ## Projectile Motion and Two-Dimensional Kinematics
 desc: Resolve velocity into horizontal and vertical parts; derive trajectories, flight times, heights, and ranges.
 
 ### A-1(b) | Final 2021 | 2022 | 2019
-**Question:** What is projectile motion? Show that the trajectory of a projectile is parabolic.
+ What is projectile motion? Show that the trajectory of a projectile is parabolic.
 
 #### Answer
 :::final
@@ -37,7 +36,7 @@ This is quadratic in \(x\), so the trajectory is a parabola.
 Projectile motion is the motion of an object projected into the air that thereafter moves under gravity alone, neglecting air resistance.
 
 ### A-1(c) | Final 2021 | 3
-**Question:** A ball is projected with initial velocities (i) \(\vec u_1=3\hat i+6\hat j\) m/s and (ii) \(\vec u_2=4\hat i+8\hat j\) m/s. Compare their horizontal ranges and maximum heights.
+ A ball is projected with initial velocities (i) \(\vec u_1=3\hat i+6\hat j\) m/s and (ii) \(\vec u_2=4\hat i+8\hat j\) m/s. Compare their horizontal ranges and maximum heights.
 
 #### Answer
 :::final
@@ -61,7 +60,7 @@ H₂/H₁ = 16/9
 :::
 
 ### A-1 | Final 2022 | Cricket-ground problem
-**Question:** The shortest boundary distance is 60 m. A batsman hits a ball at \(45^\circ\). Find the speed needed to reach the boundary, the range if the speed is halved at the same angle, and the maximum height in the first case.
+ The shortest boundary distance is 60 m. A batsman hits a ball at \(45^\circ\). Find the speed needed to reach the boundary, the range if the speed is halved at the same angle, and the maximum height in the first case.
 
 #### Answer
 :::final
@@ -82,7 +81,7 @@ H = u²sin²45°/(2g) = R/4 = 15 m
 :::
 
 ### A-1 | Final 2015 | Stone from a building
-**Question:** A stone is thrown at \(40\text{ m/s}\), \(30^\circ\) above horizontal, from a building 200 m high. Take the launch point as the origin. Find its coordinates at \(t=6\) s and the time it reaches the ground.
+ A stone is thrown at \(40\text{ m/s}\), \(30^\circ\) above horizontal, from a building 200 m high. Take the launch point as the origin. Find its coordinates at \(t=6\) s and the time it reaches the ground.
 
 #### Answer
 :::final
@@ -108,7 +107,7 @@ t = [20 + √(400 + 4(4.905)(200))]/9.81 ≈ 8.74 s
 :::
 
 ### A-1 | General projectile formulas
-**Question:** Obtain the horizontal range, maximum height, and time of flight of a projectile launched with speed \(u\) at angle \(\theta\).
+ Obtain the horizontal range, maximum height, and time of flight of a projectile launched with speed \(u\) at angle \(\theta\).
 
 #### Answer
 :::final
@@ -133,7 +132,7 @@ Horizontal range: R = u²sin2θ/g
 desc: Motion laws, apparent weight, inertial versus gravitational mass, and forces during deceleration.
 
 ### A-4(a) | Final 2021 | 3
-**Question:** State Newton's laws of motion. Using force, length, and time as fundamental quantities, find the dimension of mass.
+ State Newton's laws of motion. Using force, length, and time as fundamental quantities, find the dimension of mass.
 
 #### Answer
 :::final
@@ -155,7 +154,7 @@ M = F L⁻¹ T²
 :::
 
 ### A-4(b) | Final 2021 | 2
-**Question:** Describe two ways in which you can experience weightlessness.
+ Describe two ways in which you can experience weightlessness.
 
 #### Answer
 :::final
@@ -172,7 +171,7 @@ Apparent weight is the support force (normal reaction), not the gravitational fo
 - In an orbiting spacecraft, the spacecraft and its occupants are in continuous free fall around Earth.
 
 ### A-4(c) | Final 2021
-**Question:** How can an experiment show that inertial mass and gravitational mass are equal?
+ How can an experiment show that inertial mass and gravitational mass are equal?
 
 #### Answer
 :::final
@@ -188,7 +187,7 @@ The equivalence is an experimental result. A simple drop experiment demonstrates
 Measure the acceleration of bodies of different composition in the same gravitational field, controlling for air resistance. Their free-fall accelerations are the same within experimental uncertainty. More directly, compare inertial mass from \(F=ma\) with gravitational mass from weight \(W=m_g g\); their ratio is found to be universal.
 
 ### A-4(d) | Final 2021 | 4
-**Question:** A 300 kg body rests on a truck. The truck slows from 100 km/h to 60 km/h in 15 s. Find the average horizontal force on the body.
+ A 300 kg body rests on a truck. The truck slows from 100 km/h to 60 km/h in 15 s. Find the average horizontal force on the body.
 
 #### Answer
 :::final
@@ -212,7 +211,7 @@ F = ma = 300(−0.7407) ≈ −222 N
 desc: Relate work to kinetic energy, describe gravitational attraction, and derive escape speed.
 
 ### A-3 | Gravitational law
-**Question:** State Newton's law of universal gravitation.
+ State Newton's law of universal gravitation.
 
 #### Answer
 :::final
@@ -231,7 +230,7 @@ G ≈ 6.674 × 10⁻¹¹ N·m²/kg²
 The force acts along the line joining their centers and is attractive.
 
 ### A-2 | Work-energy theorem
-**Question:** State the work-energy theorem.
+ State the work-energy theorem.
 
 #### Answer
 :::final
@@ -250,7 +249,7 @@ W_net = ΔK = ½mv² − ½mu²
 :::
 
 ### A-4 | Escape velocity
-**Question:** Define escape velocity and obtain its expression for a body launched from a planet of mass \(M\) and radius \(R\).
+ Define escape velocity and obtain its expression for a body launched from a planet of mass \(M\) and radius \(R\).
 
 #### Answer
 :::final
@@ -273,7 +272,7 @@ desc: Momentum conservation, impulse, and one-dimensional collision calculations
 desc: Use momentum conservation, impulse, and kinetic-energy tests to analyze interactions.
 
 ### A-2 | Elastic collision of equal masses
-**Question:** Show that two equal masses exchange speeds in a one-dimensional elastic collision.
+ Show that two equal masses exchange speeds in a one-dimensional elastic collision.
 
 #### Answer
 :::final
@@ -294,7 +293,7 @@ u₁² + u₂² = v₁² + v₂²
 Factoring the second relation and combining with the first yields \(v_1=u_2\) and \(v_2=u_1\), for the nontrivial collision solution.
 
 ### B-6(c) | Final 2021 | 7
-**Question:** A 2 kg ball falls vertically onto a floor at 25 m/s and rebounds upward at 10 m/s. Find the impulse on the ball and the average force exerted by the floor if contact lasts 0.02 s.
+ A 2 kg ball falls vertically onto a floor at 25 m/s and rebounds upward at 10 m/s. Find the impulse on the ball and the average force exerted by the floor if contact lasts 0.02 s.
 
 #### Answer
 :::final
@@ -314,7 +313,7 @@ F_net,avg = J/Δt = 70/0.02 = 3500 N upward on the ball
 Including the ball’s weight during contact, the average floor force on the ball is about \(3500+2(9.81)=3519.6\) N upward; the force exerted on the floor is equally large and downward.
 
 ### A-2 | Final 2022 | 2021 | Collision of 5 kg and 10 kg blocks
-**Question:** A 5.0 kg block moves at 25 m/s and collides with a 10.0 kg block moving at 10 m/s in the same direction. After collision, the 10 kg block moves at 15 m/s in the original direction. Find the final velocity of the 5 kg block and decide whether the collision is elastic.
+ A 5.0 kg block moves at 25 m/s and collides with a 10.0 kg block moving at 10 m/s in the same direction. After collision, the 10 kg block moves at 15 m/s in the original direction. Find the final velocity of the 5 kg block and decide whether the collision is elastic.
 
 #### Answer
 :::final
@@ -335,7 +334,7 @@ v₁ = 15 m/s
 Initial kinetic energy is \(K_i=\frac12(5)(25^2)+\frac12(10)(10^2)=2062.5\) J. Final kinetic energy is \(K_f=\frac12(5)(15^2)+\frac12(10)(15^2)=1687.5\) J. The loss is \(375\) J, so the collision is **inelastic**.
 
 ### B-6(a,b) | Collision principles
-**Question:** What is a collision? When is it elastic or inelastic? Show that momentum is conserved during a collision.
+ What is a collision? When is it elastic or inelastic? Show that momentum is conserved during a collision.
 
 #### Answer
 :::final
@@ -357,7 +356,7 @@ For two bodies in an isolated system, Newton's third law gives \(\vec F_{12}=-\v
 Thus total linear momentum is conserved.
 
 ### A-2 | Head-on elastic collision: lighter body
-**Question:** Under what condition does a lighter particle rebound with its initial velocity after a head-on elastic collision with a heavier body?
+ Under what condition does a lighter particle rebound with its initial velocity after a head-on elastic collision with a heavier body?
 
 #### Answer
 :::final
@@ -378,7 +377,7 @@ v₂ = [2m₁/(m₁ + m₂)]u₁
 If \(m_2\gg m_1\), then \(v_1\approx-u_1\): it rebounds with nearly the same speed in the opposite direction.
 
 ### A-2 | Final 2019 / 2015 | Elastic collision calculation
-**Question:** Two bodies of masses 15 kg and 8 kg have initial velocities \(u_1=5\) m/s and \(u_2=-3\) m/s. Find their velocities after a one-dimensional elastic collision.
+ Two bodies of masses 15 kg and 8 kg have initial velocities \(u_1=5\) m/s and \(u_2=-3\) m/s. Find their velocities after a one-dimensional elastic collision.
 
 #### Answer
 :::final
@@ -405,7 +404,7 @@ v₂ = [150 + (−7)(−3)]/23 = 171/23 ≈ 7.435 m/s
 desc: Connect angular position, angular speed, tangential speed, and centripetal acceleration.
 
 ### A-2 | Final 2021 | Rotating wheel
-**Question:** A point on a wheel has angular position \(\theta=2+4t^2+2t^3\) radians, and the wheel radius is 0.5 m. Find angular position and angular velocity at \(t=0\), and linear speed and radial acceleration at \(t=4\) s.
+ A point on a wheel has angular position \(\theta=2+4t^2+2t^3\) radians, and the wheel radius is 0.5 m. Find angular position and angular velocity at \(t=0\), and linear speed and radial acceleration at \(t=4\) s.
 
 #### Answer
 :::final
@@ -428,7 +427,7 @@ aᵣ = rω² = 0.5 × 128² = 8192 m/s²
 :::
 
 ### A-4 | Circular motion
-**Question:** Does a particle moving around a circle at constant speed have acceleration? Explain.
+ Does a particle moving around a circle at constant speed have acceleration? Explain.
 
 #### Answer
 :::final
@@ -449,7 +448,7 @@ The acceleration is nonzero even though the speed is constant.
 desc: Rotational equivalents of force, momentum, and inertia; laws of rotational motion.
 
 ### A-2(c) | Final 2021
-**Question:** Define angular momentum. A 10 N force acts tangentially at a radius of 0.5 m. Find the rate of change of angular momentum.
+ Define angular momentum. A 10 N force acts tangentially at a radius of 0.5 m. Find the rate of change of angular momentum.
 
 #### Answer
 :::final
@@ -468,7 +467,7 @@ dL/dt = τ
 Thus the rate of change of angular momentum is \(5\text{ N·m}\), in the torque direction.
 
 ### A-3 | Final 2021 | Moment of inertia and angular momentum
-**Question:** Define torque and angular momentum and derive their relation. Find the rotational kinetic energy and show that \(L=2K\) for a rigid body rotating with unit angular speed.
+ Define torque and angular momentum and derive their relation. Find the rotational kinetic energy and show that \(L=2K\) for a rigid body rotating with unit angular speed.
 
 #### Answer
 :::final
@@ -490,7 +489,7 @@ L = Iω  (rotation about a principal/fixed axis)
 At \(\omega=1\text{ rad/s}\), \(L=I\) and \(K=I/2\), so \(L=2K\) numerically in SI units.
 
 ### A-4 | Moment of inertia of a solid cylinder
-**Question:** Find the moment of inertia of a uniform solid cylinder about its central longitudinal axis.
+ Find the moment of inertia of a uniform solid cylinder about its central longitudinal axis.
 
 #### Answer
 :::final
@@ -509,7 +508,7 @@ I = ½MR²
 :::
 
 ### A-4 | Parallel-axis theorem
-**Question:** State and prove the parallel-axis theorem.
+ State and prove the parallel-axis theorem.
 
 #### Answer
 :::final
@@ -533,7 +532,7 @@ I = I_cm + Md²
 desc: Distinguish ordered solids; count atoms, lattice points, nearest neighbors, and packed volume.
 
 ### A-3(a) | Final 2021 | 2022 | 2023 | 2024
-**Question:** Distinguish crystalline and amorphous solids.
+ Distinguish crystalline and amorphous solids.
 
 #### Answer
 :::final
@@ -559,7 +558,7 @@ Polycrystalline materials contain many crystallites with different orientations;
 | Examples: NaCl, quartz, copper | Examples: glass, many plastics, pitch |
 
 ### A-3(b) | Final 2021 | Unit cell and BCC sodium
-**Question:** Sodium has a BCC structure, atomic mass 23 g/mol, and density \(2.18\times10^3\) kg/m³. Find the atoms per unit cell and lattice parameter \(a\).
+ Sodium has a BCC structure, atomic mass 23 g/mol, and density \(2.18\times10^3\) kg/m³. Find the atoms per unit cell and lattice parameter \(a\).
 
 #### Answer
 :::final
@@ -580,7 +579,7 @@ a ≈ 4.12 × 10⁻¹⁰ m = 4.12 Å
 :::
 
 ### A-3 | Packing fraction of cubic lattices
-**Question:** Define packing fraction and find it for simple cubic, BCC, and FCC structures.
+ Define packing fraction and find it for simple cubic, BCC, and FCC structures.
 
 #### Answer
 :::final
@@ -601,7 +600,7 @@ FCC: N=4, √2a=4r → PF = π/(3√2) ≈ 0.740 (74.0%)
 :::
 
 ### A-3 | Primitive cell and Bravais lattices
-**Question:** Define a primitive cell, unit cell, lattice, and basis. Classify Bravais lattices.
+ Define a primitive cell, unit cell, lattice, and basis. Classify Bravais lattices.
 
 #### Answer
 :::final
@@ -622,7 +621,7 @@ A conventional BCC unit cell contains two lattice points and is non-primitive; a
 There are 14 three-dimensional Bravais lattices in seven crystal systems: cubic, tetragonal, orthorhombic, monoclinic, triclinic, hexagonal, and trigonal (rhombohedral). The lattice types are primitive (P), body-centered (I), face-centered (F), and base-centered (C), where allowed by each system.
 
 ### A-3 | Non-Bravais lattice
-**Question:** Define a non-Bravais lattice with an example.
+ Define a non-Bravais lattice with an example.
 
 #### Answer
 :::final
@@ -636,7 +635,7 @@ Graphene illustrates why a beautiful repeating atomic pattern need not itself be
 A non-Bravais crystal arrangement cannot be described as one identical atom or basis point at every point of a single Bravais lattice with all lattice points equivalent under translation alone. The honeycomb arrangement of graphene is a common example: it can be described as a triangular Bravais lattice with a two-atom basis. The NaCl structure can likewise be described using a Bravais lattice and a multi-ion basis.
 
 ### A-3 | Coordination number
-**Question:** Define coordination number and state it for SC, BCC, and FCC.
+ Define coordination number and state it for SC, BCC, and FCC.
 
 #### Answer
 :::final
@@ -655,7 +654,7 @@ FCC: 12
 :::
 
 ### A-3 | NaCl crystal structure
-**Question:** Describe the unit cell of sodium chloride.
+ Describe the unit cell of sodium chloride.
 
 #### Answer
 :::final
@@ -669,7 +668,7 @@ The rock-salt pattern consists of two interpenetrating arrangements of ions. An 
 NaCl has the rock-salt structure: one ion species forms an FCC lattice and the other occupies all octahedral sites. Each Na⁺ is surrounded by six Cl⁻ nearest neighbors and vice versa. The conventional cubic cell contains four NaCl formula units (four Na⁺ and four Cl⁻ ions).
 
 ### A-3 | Density and lattice parameter
-**Question:** Find a cubic crystal's lattice parameter from density and formula mass.
+ Find a cubic crystal's lattice parameter from density and formula mass.
 
 #### Answer
 :::final
@@ -692,7 +691,7 @@ a = [ZM/(ρN_A)]^(1/3)
 desc: Identify crystallographic planes and calculate interplanar spacing.
 
 ### A-3 | Miller indices
-**Question:** Define Miller indices and state the rules for finding them.
+ Define Miller indices and state the rules for finding them.
 
 #### Answer
 :::final
@@ -716,7 +715,7 @@ Miller indices \((hkl)\) label the orientation of a family of crystal planes.
 4. A plane parallel to an axis has zero index for that axis; a negative intercept is marked with a bar.
 
 ### A-3 | Interplanar spacing
-**Question:** Find the separation between adjacent \((hkl)\) planes in a cubic crystal of lattice parameter \(a\).
+ Find the separation between adjacent \((hkl)\) planes in a cubic crystal of lattice parameter \(a\).
 
 #### Answer
 :::final
@@ -734,7 +733,7 @@ d_hkl = a/√(h²+k²+l²)
 :::
 
 ### A-3 | Crystal planes (001), (020), (111), (224), (220), (402), (406)
-**Question:** Describe how to sketch crystal planes from Miller indices.
+ Describe how to sketch crystal planes from Miller indices.
 
 #### Answer
 :::final
@@ -760,7 +759,7 @@ For a cubic cell, a plane \((hkl)\) intercepts the axes at \(a/h,\ a/k,\ a/l\); 
 desc: Understand Bragg interference and compute reflection wavelengths and angles.
 
 ### B-7(a) | X-ray diffraction and Bragg's law
-**Question:** Derive Bragg's law. Why can visible light not normally produce Bragg diffraction from atomic planes? State an application.
+ Derive Bragg's law. Why can visible light not normally produce Bragg diffraction from atomic planes? State an application.
 
 #### Answer
 :::final
@@ -778,7 +777,7 @@ For X-rays reflected by successive parallel crystal planes separated by distance
 X-ray wavelengths (roughly \(10^{-11}\)–\(10^{-10}\) m) are comparable to atomic plane spacings. Visible wavelengths are hundreds of nanometers, much larger than those spacings, so ordinary atomic-plane Bragg diffraction cannot occur at a physical angle. Applications include determining crystal structure, lattice spacing, and X-ray wavelength.
 
 ### A-7(b) | Final 2021 | Bragg calculation
-**Question:** X-rays strike NaCl planes at a glancing angle of \(30.0^\circ\); plane spacing is 39.8 pm and reflection is first order. Find the wavelength.
+ X-rays strike NaCl planes at a glancing angle of \(30.0^\circ\); plane spacing is 39.8 pm and reflection is first order. Find the wavelength.
 
 #### Answer
 :::final
@@ -795,7 +794,7 @@ nλ = 2d sinθ
 :::
 
 ### A-7(b) | Final 2021–2022 | Bragg spectrometer
-**Question:** First-order maximum occurs at glancing angle \(8^\circ\) for plane spacing \(d=2.80\times10^{-10}\) m. Find the wavelength and the second-order glancing angle.
+ First-order maximum occurs at glancing angle \(8^\circ\) for plane spacing \(d=2.80\times10^{-10}\) m. Find the wavelength and the second-order glancing angle.
 
 #### Answer
 :::final
@@ -815,7 +814,7 @@ sinθ₂ = 2λ/(2d) = λ/d
 :::
 
 ### A-2(c) | Final 2024 | Bragg angle for a cubic crystal
-**Question:** A cubic crystal has \(a=4.2\) Å. Find the first-order scattering angle for X-rays of wavelength \(0.8\) Å reflected from the \((260)\) planes.
+ A cubic crystal has \(a=4.2\) Å. Find the first-order scattering angle for X-rays of wavelength \(0.8\) Å reflected from the \((260)\) planes.
 
 #### Answer
 :::final
@@ -835,7 +834,7 @@ sinθ = λ/(2d) = 0.8/(2 × 0.664) ≈ 0.602
 :::
 
 ### A-2(c) | Final 2025 | Second-order reflection
-**Question:** A cubic crystal has \(a=4.2\) Å. Find the second-order scattering angle \(2\theta\) for reflection from the \((406)\) planes using \(\lambda=0.6\) Å.
+ A cubic crystal has \(a=4.2\) Å. Find the second-order scattering angle \(2\theta\) for reflection from the \((406)\) planes using \(\lambda=0.6\) Å.
 
 #### Answer
 :::final
@@ -855,7 +854,7 @@ sinθ = nλ/(2d) = 2(0.6)/(2 × 0.582) ≈ 1.031
 No real Bragg angle exists for the stated second-order reflection because \(\sin\theta>1\).
 
 ### A-6 | Longest wavelength analyzed by a crystal
-**Question:** Find the longest wavelength that can be diffracted by a crystal with plane spacing \(d=2.82\) Å in first and second order.
+ Find the longest wavelength that can be diffracted by a crystal with plane spacing \(d=2.82\) Å in first and second order.
 
 #### Answer
 :::final
@@ -878,7 +877,7 @@ desc: SHM, damped and forced oscillations, resonance, and spring-mass systems.
 desc: Periodic motion, SHM equations, travel times, spring stiffness, and oscillator energy.
 
 ### A-4 | Simple harmonic motion
-**Question:** Define SHM, derive its differential equation, and write its solution.
+ Define SHM, derive its differential equation, and write its solution.
 
 #### Answer
 :::final
@@ -901,7 +900,7 @@ x(t) = A cos(ωt + φ)
 The period is \(T=2\pi/\omega\), and the frequency is \(f=1/T\).
 
 ### A-4(c) | Final 2022 | SHM time interval
-**Question:** An oscillator has amplitude 25 cm and period \(1/3\) s. Find the minimum time to move between positions 12.5 cm on either side of the mean position.
+ An oscillator has amplitude 25 cm and period \(1/3\) s. Find the minimum time to move between positions 12.5 cm on either side of the mean position.
 
 #### Answer
 :::final
@@ -919,7 +918,7 @@ The positions are \(x=\pm A/2\). Let \(x=A\sin\omega t\), so the phase angles fo
 :::
 
 ### A-3 | Spring-mass period
-**Question:** A 4.0 kg mass stretches a spring by 16 cm. It is removed and a 0.5 kg mass is attached. Find the new period of oscillation.
+ A 4.0 kg mass stretches a spring by 16 cm. It is removed and a 0.5 kg mass is attached. Find the new period of oscillation.
 
 #### Answer
 :::final
@@ -939,7 +938,7 @@ T = 2π√(m/k) = 2π√(0.5/245.3) ≈ 0.284 s
 :::
 
 ### A-3 | Energy in SHM
-**Question:** Express kinetic and potential energy of an SHM oscillator and show that total energy is proportional to amplitude squared.
+ Express kinetic and potential energy of an SHM oscillator and show that total energy is proportional to amplitude squared.
 
 #### Answer
 :::final
@@ -959,7 +958,7 @@ E = K + U = ½kA² = constant
 Since \(k=m\omega^2\), total energy is proportional to \(A^2\).
 
 ### A-3 | Periodic motion
-**Question:** What is periodic motion? Give examples.
+ What is periodic motion? Give examples.
 
 #### Answer
 :::final
@@ -978,7 +977,7 @@ desc: Progressive waves, wave speed, classification, and interference.
 desc: Energy loss, driving forces, and the conditions for a strong oscillatory response.
 
 ### A-3 | Damped harmonic oscillation
-**Question:** What is damped harmonic motion? Write its differential equation and discuss average power dissipation.
+ What is damped harmonic motion? Write its differential equation and discuss average power dissipation.
 
 #### Answer
 :::final
@@ -1002,7 +1001,7 @@ mẍ + bẋ + kx = 0
 For underdamping, \(x=A_0e^{-bt/(2m)}\cos(\omega_dt+\phi)\), where \(\omega_d=\sqrt{k/m-b^2/(4m^2)}\).
 
 ### A-3 | Forced oscillation and resonance
-**Question:** Define forced oscillation and resonance. Give the equation of forced motion.
+ Define forced oscillation and resonance. Give the equation of forced motion.
 
 #### Answer
 :::final
@@ -1023,7 +1022,7 @@ Resonance is the large response that occurs when the driving frequency is near t
 desc: Travelling-wave equations, wavefronts, classifications, speed, and sound in gases.
 
 ### B-5(a) | Final 2021
-**Question:** What is a progressive wave? Show that a plane progressive wave can be represented as \(y=a\sin(\omega t-kx)\).
+ What is a progressive wave? Show that a plane progressive wave can be represented as \(y=a\sin(\omega t-kx)\).
 
 #### Answer
 :::final
@@ -1045,7 +1044,7 @@ v = ω/k = fλ
 :::
 
 ### B-8(a) | Wave classification
-**Question:** Classify waves and write an equation for a travelling wave.
+ Classify waves and write an equation for a travelling wave.
 
 #### Answer
 :::final
@@ -1065,7 +1064,7 @@ Waves may be classified as:
 A one-dimensional sinusoidal travelling wave is \(y=A\sin(kx-\omega t+\phi)\), with \(v=\omega/k=f\lambda\).
 
 ### B-8(c) | Plane and spherical waves
-**Question:** How can plane and spherical waves be created?
+ How can plane and spherical waves be created?
 
 #### Answer
 :::final
@@ -1079,7 +1078,7 @@ A wavefront is a surface joining points of equal phase. Near a small source it i
 A plane wave can be approximated by a source very far away or by passing a wave through a suitable collimating system/aperture so that wavefront curvature is negligible over the region of interest. A small point-like source radiating uniformly in a homogeneous medium produces approximately spherical wavefronts.
 
 ### B-5(b) | Final 2021 | 2023 | 2024 | 2025
-**Question:** Derive the speed of a longitudinal wave in a gas and explain Laplace's correction to Newton's formula.
+ Derive the speed of a longitudinal wave in a gas and explain Laplace's correction to Newton's formula.
 
 #### Answer
 :::final
@@ -1102,7 +1101,7 @@ v = √(γP/ρ)
 :::
 
 ### B-8 | Wave on a rope
-**Question:** A transverse wave is \(y=15\sin[\pi(0.02x-2.00t)]\), where \(x,y\) are in cm and \(t\) in seconds. Find amplitude, frequency, speed, and wavelength.
+ A transverse wave is \(y=15\sin[\pi(0.02x-2.00t)]\), where \(x,y\) are in cm and \(t\) in seconds. Find amplitude, frequency, speed, and wavelength.
 
 #### Answer
 :::final
@@ -1128,7 +1127,7 @@ The phase is \(0.02\pi x-2\pi t\), so the wave travels in the \(+x\) direction.
 desc: Wave addition, constructive and destructive interference, and coherent sources.
 
 ### B-8(b) | Interference of waves
-**Question:** Define superposition and derive constructive and destructive interference for two sinusoidal waves.
+ Define superposition and derive constructive and destructive interference for two sinusoidal waves.
 
 #### Answer
 :::final
@@ -1149,7 +1148,7 @@ Resultant amplitude R = 2A|cos(δ/2)|
 Constructive interference occurs when \(\delta=2n\pi\), giving maximum amplitude \(2A\). Destructive interference occurs when \(\delta=(2n+1)\pi\), giving zero amplitude for equal amplitudes.
 
 ### B-8 | Coherent sources
-**Question:** What are coherent sources, and how can coherence be achieved?
+ What are coherent sources, and how can coherence be achieved?
 
 #### Answer
 :::final
@@ -1165,7 +1164,7 @@ Coherent sources emit waves of the same frequency with a constant phase differen
 desc: Young's double-slit experiment, fringe width, lens combinations, and light theories.
 
 ### B-8 | Maximum intensity in interference
-**Question:** Show that the maximum intensity of two interfering waves of equal intensity \(I_0\) is \(4I_0\).
+ Show that the maximum intensity of two interfering waves of equal intensity \(I_0\) is \(4I_0\).
 
 #### Answer
 :::final
@@ -1187,7 +1186,7 @@ The minimum intensity is zero for perfect destructive interference of equal-ampl
 desc: Derive bright-fringe locations and calculate optical fringe widths and angles.
 
 ### B-8 | Young's double-slit experiment
-**Question:** Derive the fringe width in Young's double-slit experiment.
+ Derive the fringe width in Young's double-slit experiment.
 
 #### Answer
 :::final
@@ -1204,7 +1203,7 @@ For slit separation \(d\), screen distance \(D\), wavelength \(\lambda\), and sm
 :::
 
 ### B-8 | Young's double-slit numerical
-**Question:** Slit separation is 1.8 mm, fringe width is 0.32 mm, and screen distance is 1.1 m. Find the wavelength.
+ Slit separation is 1.8 mm, fringe width is 0.32 mm, and screen distance is 1.1 m. Find the wavelength.
 
 #### Answer
 :::final
@@ -1222,7 +1221,7 @@ Convert millimeters to meters first. Solve β=λD/d for the unknown wavelength, 
 :::
 
 ### B-8 | Young's double-slit numerical, sodium light
-**Question:** Slit separation is 2.5 mm, screen distance 50 cm, and wavelength \(5890\) Å. Find the angular position of the first maximum and the fringe width.
+ Slit separation is 2.5 mm, screen distance 50 cm, and wavelength \(5890\) Å. Find the angular position of the first maximum and the fringe width.
 
 #### Answer
 :::final
@@ -1245,7 +1244,7 @@ First convert ångströms to meters. The first off-axis bright fringe occurs whe
 desc: Focal points, ray diagrams, combined lenses, and optical power.
 
 ### B-4 | Thin lenses in contact or separated
-**Question:** Two thin lenses of focal lengths \(f_1\) and \(f_2\) are placed coaxially in air with separation \(d\). Obtain the equivalent focal length.
+ Two thin lenses of focal lengths \(f_1\) and \(f_2\) are placed coaxially in air with separation \(d\). Obtain the equivalent focal length.
 
 #### Answer
 :::final
@@ -1263,7 +1262,7 @@ Using the thin-lens sign convention, the equivalent power is
 For lenses in contact, \(d=0\) and \(1/F=1/f_1+1/f_2\).
 
 ### B-4(c) | Final 2024 | Converging and diverging lenses
-**Question:** A converging lens and a diverging lens, each of focal-length magnitude 12 cm, are separated by 6 cm in air. Find equivalent focal length and power.
+ A converging lens and a diverging lens, each of focal-length magnitude 12 cm, are separated by 6 cm in air. Find equivalent focal length and power.
 
 #### Answer
 :::final
@@ -1282,7 +1281,7 @@ P = 1/F(m) = +4.17 D
 :::
 
 ### B-4(a) | Principal foci of a lens
-**Question:** Define the principal foci of a lens.
+ Define the principal foci of a lens.
 
 #### Answer
 :::final
@@ -1296,7 +1295,7 @@ The focus is defined using incoming rays parallel to the axis. A convex lens bri
 The principal focus of a converging lens is the point on its principal axis where rays parallel to the axis converge after refraction. For a diverging lens, parallel rays diverge after refraction as if they originated from a virtual principal focus. A thin lens has two principal foci, one on each side.
 
 ### B-4 | Convex lens image cases
-**Question:** Describe image formation by a convex lens when the object is at infinity, at \(2F\), at \(F\), and between \(F\) and the optical center.
+ Describe image formation by a convex lens when the object is at infinity, at \(2F\), at \(F\), and between \(F\) and the optical center.
 
 #### Answer
 :::final
@@ -1316,7 +1315,7 @@ The two easy ray rules are: a ray through the lens center is nearly undeviated, 
 desc: Wave and electromagnetic explanations of light and the Fizeau speed-of-light experiment.
 
 ### B-6 | Wave and electromagnetic theories of light
-**Question:** Distinguish the classical wave theory and electromagnetic theory of light.
+ Distinguish the classical wave theory and electromagnetic theory of light.
 
 #### Answer
 :::final
@@ -1330,7 +1329,7 @@ Wave theory accounts for interference and diffraction, demonstrating that light 
 The classical wave theory treats light as a wave and explains reflection, refraction, interference, diffraction, and polarization. Maxwell's electromagnetic theory identifies light as a transverse electromagnetic wave consisting of mutually perpendicular electric and magnetic fields; it predicts speed \(c=1/\sqrt{\mu_0\epsilon_0}\) in vacuum. The electromagnetic theory is a more specific physical account of light's wave nature. Quantum effects require the photon model in situations such as the photoelectric effect.
 
 ### B-6 | Fizeau's method
-**Question:** Describe Fizeau's method for measuring the speed of light.
+ Describe Fizeau's method for measuring the speed of light.
 
 #### Answer
 :::final
@@ -1349,7 +1348,7 @@ desc: Charge, Coulomb's law, electric field, Gauss's law, and potential.
 desc: Quantization of charge and inverse-square electrical interactions.
 
 ### B-2 | Quantization of charge
-**Question:** Describe the quantization of electric charge.
+ Describe the quantization of electric charge.
 
 #### Answer
 :::final
@@ -1368,7 +1367,7 @@ e = 1.602176634 × 10⁻¹⁹ C
 Quarks have fractional charges but are not observed as isolated free particles under ordinary conditions.
 
 ### B-2 | Coulomb's law
-**Question:** State Coulomb's law in scalar and vector form.
+ State Coulomb's law in scalar and vector form.
 
 #### Answer
 :::final
@@ -1387,7 +1386,7 @@ F = (1/4πε₀)|q₁q₂|/r²
 Here \(\hat r_{12}\) points from charge 1 to charge 2; the force on charge 2 due to charge 1 is \((1/4\pi\epsilon_0)(q_1q_2/r^2)\hat r_{12}\). Like charges repel and unlike charges attract.
 
 ### B-2 | Electric and gravitational force between proton and electron
-**Question:** Compare the magnitudes of electrostatic and gravitational forces between an electron and a proton.
+ Compare the magnitudes of electrostatic and gravitational forces between an electron and a proton.
 
 #### Answer
 :::final
@@ -1408,7 +1407,7 @@ The electrostatic attraction is about \(10^{39}\) times stronger than gravity fo
 desc: Electric flux, Gaussian symmetry, field distributions, and field-line interpretation.
 
 ### B-3 | Gauss's law
-**Question:** State Gauss's law and give its differential form.
+ State Gauss's law and give its differential form.
 
 #### Answer
 :::final
@@ -1427,7 +1426,7 @@ The total electric flux through a closed surface equals the enclosed charge divi
 The differential form follows from the integral form using the divergence theorem.
 
 ### B-3 | Derive Coulomb's law from Gauss's law
-**Question:** Deduce Coulomb's law for a point charge using Gauss's law.
+ Deduce Coulomb's law for a point charge using Gauss's law.
 
 #### Answer
 :::final
@@ -1446,7 +1445,7 @@ E = q/(4πε₀r²)
 The force on a test charge \(q_0\) is \(\vec F=q_0\vec E\), which gives Coulomb's law.
 
 ### B-4 | Electric field of a uniformly charged ring
-**Question:** A ring of radius \(R\) carries total charge \(Q\). Find the electric field at a point on its axis a distance \(z\) from its center.
+ A ring of radius \(R\) carries total charge \(Q\). Find the electric field at a point on its axis a distance \(z\) from its center.
 
 #### Answer
 :::final
@@ -1464,7 +1463,7 @@ E_z = (1/4πε₀) Qz/(R²+z²)^(3/2)
 The direction is along the axis away from the ring for \(Q>0,z>0\), and reversed for the opposite sign of \(Qz\).
 
 ### B-4 | Electric field of an infinite charged sheet
-**Question:** State the electric field of an infinite uniformly charged sheet and describe the field lines.
+ State the electric field of an infinite uniformly charged sheet and describe the field lines.
 
 #### Answer
 :::final
@@ -1482,7 +1481,7 @@ E = |σ|/(2ε₀)
 The field is uniform and perpendicular to the sheet on each side; it points away from a positive sheet and toward a negative sheet. Between oppositely charged parallel infinite plates, the fields add to approximately \(E=\sigma/\epsilon_0\) and point from positive to negative.
 
 ### B-4 | Electric field lines
-**Question:** Describe field lines for a positive charge, negative charge, dipole, equal positive charges, and a parallel-plate capacitor.
+ Describe field lines for a positive charge, negative charge, dipole, equal positive charges, and a parallel-plate capacitor.
 
 #### Answer
 :::final
@@ -1505,7 +1504,7 @@ desc: Biot–Savart law, magnetic field of wires and coils, and Ampère's law.
 desc: Electric potential, electric field, and the relation between them.
 
 ### B-5(c) | Electric potential of a point charge
-**Question:** Show that electric potential due to a point charge can be written as \(V=q/(4\pi\epsilon_0r)\).
+ Show that electric potential due to a point charge can be written as \(V=q/(4\pi\epsilon_0r)\).
 
 #### Answer
 :::final
@@ -1523,7 +1522,7 @@ V(r) = −∫∞ʳ E·dl = q/(4πε₀r)
 This expression is for a point charge in vacuum; the sign follows the sign of \(q\).
 
 ### B-4 | Electric field strength and potential
-**Question:** Define electric field strength and electric potential.
+ Define electric field strength and electric potential.
 
 #### Answer
 :::final
@@ -1540,7 +1539,7 @@ Electric field strength is force per unit positive test charge, \(\vec E=\vec F/
 desc: Magnetic fields around currents and the laws used to calculate them.
 
 ### B-3 | Biot–Savart law
-**Question:** State Biot–Savart law.
+ State Biot–Savart law.
 
 #### Answer
 :::final
@@ -1558,7 +1557,7 @@ d𝐁 = (μ₀/4π) I (d𝐥 × r̂)/r²
 The direction is given by the right-hand rule. Integrating over the current path gives the total field.
 
 ### B-3 | Magnetic field of an infinite straight wire
-**Question:** Use the Biot–Savart law to find the magnetic field a distance \(R\) from a long straight wire carrying current \(I\).
+ Use the Biot–Savart law to find the magnetic field a distance \(R\) from a long straight wire carrying current \(I\).
 
 #### Answer
 :::final
@@ -1576,7 +1575,7 @@ B = μ₀I/(2πR)
 The field lines are concentric circles around the wire, with direction set by the right-hand rule.
 
 ### B-5 | Ampère's law
-**Question:** State Ampère's law.
+ State Ampère's law.
 
 #### Answer
 :::final
@@ -1594,7 +1593,7 @@ For steady currents in vacuum,
 In differential form, \(\nabla\times\vec B=\mu_0\vec J\) for magnetostatics. Maxwell's displacement-current term is required for the general time-dependent form.
 
 ### B-3 | Magnetic field at the center of a circular coil
-**Question:** A circular coil has radius 40 mm, 250 turns, and current 20 mA. Find the magnetic field at its center.
+ A circular coil has radius 40 mm, 250 turns, and current 20 mA. Find the magnetic field at its center.
 
 #### Answer
 :::final
@@ -1613,7 +1612,7 @@ B ≈ 7.85 × 10⁻⁵ T
 :::
 
 ### B-6(c) | Magnetic field due to an orbiting electron
-**Question:** An electron moves in a circular orbit of radius \(5.1\times10^{-11}\) m at frequency \(6.8\times10^{15}\) revolutions/s. Find the magnetic field at the center.
+ An electron moves in a circular orbit of radius \(5.1\times10^{-11}\) m at frequency \(6.8\times10^{15}\) revolutions/s. Find the magnetic field at the center.
 
 #### Answer
 :::final
@@ -1636,7 +1635,7 @@ desc: Elasticity, plasticity, stress-strain behavior, and band theory.
 desc: Stress, strain, elastic recovery, and permanent deformation.
 
 ### B-7(c) | Elasticity and plasticity
-**Question:** Define elasticity and plasticity. Describe a stress-strain diagram.
+ Define elasticity and plasticity. Describe a stress-strain diagram.
 
 #### Answer
 :::final
@@ -1661,7 +1660,7 @@ For a typical ductile material, a stress-strain curve includes:
 desc: Use occupied bands and energy gaps to distinguish electrical materials.
 
 ### B-6(b) | Band theory
-**Question:** Explain the band-theory distinction between metals, insulators, and semiconductors.
+ Explain the band-theory distinction between metals, insulators, and semiconductors.
 
 #### Answer
 :::final
